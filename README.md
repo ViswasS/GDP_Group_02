@@ -26,3 +26,26 @@ Protects patient privacy by running AI on the device instead of the cloud.
 Reduces unnecessary clinic visits by offering quick pre-screening.
 
 Supports doctors with decision-ready reports to save time and improve accuracy.
+
+
+# Technologies Used
+**Front-end:**
+Mobile App (Patient side): React Native (with Expo for quick setup), React Native Paper for UI components
+Web App (Doctor portal): ReactJS + Material-UI (for professional dashboards)
+
+**Backend:**
+Firebase (Firestore for data, Firebase Auth for login, Firebase Storage for image uploads)
+(Alternative: Supabase or a simple Node.js + Express backend if you want more control)
+
+**Database:**
+Firebase Firestore (NoSQL, real-time sync between patient and doctor views)
+
+**AI Model:**
+Image Classification: MobileNetV2 or EfficientNet-Lite (TensorFlow/Keras → TensorFlow Lite for on-device inference)
+Symptom Classification: Logistic Regression or Decision Tree (scikit-learn, lightweight and easy to embed)
+Fusion: Weighted decision rule combining image and symptom results
+
+**Tools:**
+Python (TensorFlow/Keras, scikit-learn, OpenCV for preprocessing)
+GitHub (version control, daily commits)
+Figma (wireframes/designs if needed)
