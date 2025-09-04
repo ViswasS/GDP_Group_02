@@ -17,7 +17,7 @@ The app provides a clear triage result within 10 seconds, guiding patients on wh
 Doctors have access to a secure web portal where they can view patient reports, confirm or override AI decisions, and update patient history.
 
 # **Overview**
-EdgeCare Triage is a mobile and web application that utilizes Edge Artificial Intelligence (AI) to assist patients in evaluating their symptoms before visiting a doctor. The app runs lightweight AI models directly on the patient’s device, ensuring that sensitive health data remains private.
+EdgeCare Triage is a mobile and web app designed to give patients peace of mind before visiting a doctor. Using smart AI that runs directly on the phone, the app keeps personal health data private while providing quick and reliable results. Patients can simply answer a few health questions or snap a photo of a rash to find out if they need medical care within seconds. Doctors can then view these reports through a secure portal, confirm the results, or make adjustments as needed. By helping patients get instant guidance and supporting doctors with clear reports, EdgeCare Triage makes healthcare faster, safer, and more accessible for everyone.
 
 ## Benefits
 
