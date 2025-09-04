@@ -4,7 +4,7 @@ Graduate Direct Project - 1
 Himaja,
 Tharun,
 Viswas,
-Vamshi.
+Vamshi Krishna.
 
 # Key Features:
 
