@@ -18,3 +18,11 @@ Doctors have access to a secure web portal where they can view patient reports, 
 
 # **Overview**
 EdgeCare Triage is a mobile and web application that uses Edge Artificial Intelligence (AI) to help patients check their symptoms before visiting a doctor. The app runs lightweight AI models directly on the patient’s device, ensuring that sensitive health data remains private.
+
+## Benefits
+
+Protects patient privacy by running AI on the device instead of the cloud.
+
+Reduces unnecessary clinic visits by offering quick pre-screening.
+
+Supports doctors with decision-ready reports to save time and improve accuracy.
