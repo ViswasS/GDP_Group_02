@@ -1,5 +1,6 @@
 # EdgeCare-Triage
-Graduate Direct Project - 1
+Graduate Direct Project - 1, Group_02
+
 # Team Members
 Himaja,
 Tharun,
