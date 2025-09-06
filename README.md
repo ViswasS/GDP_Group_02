@@ -59,7 +59,7 @@ Figma (wireframes/designs if needed)
 
 2. On-Device AI Analysis
    
-  The app processes the inputs using AI models to identify potential conditions and assign severity rating (Normal, Mild, Moderate, Severe).
+  The app processes the inputs using AI models to identify potential conditions and assign a severity rating (Normal, Mild, Moderate, Severe).
 
 3. Personalized Guidance
 
@@ -90,13 +90,13 @@ Machine learning models are applied in EdgeCare Triage to provide computerized e
 
 We employ the following evaluation metrics to determine how well our picture categorization model performs:
  
-**Accuracy:** The number of correctly classified pictures out of total photos is called accuracy. It provides an overall idea of the performance of the model.
+**Accuracy:** The number of correctly classified pictures out of the total photos is called accuracy. It provides an overall idea of the performance of the model.
 
 **Precision:** It represents the number of pictures correctly classified as a specific disease. This minimizes the number of false positives.
 
-**Recall (Sensitivity):** Displays the proportion of actual occurrences of a disease in the real world that were accurately forecasted by the model. It is important in medical industry because neglecting a condition may prove to be fatal.
+**Recall (Sensitivity):** Displays the proportion of actual occurrences of a disease in the real world that were accurately forecasted by the model. It is important in the medical industry because neglecting a condition may prove to be fatal.
 
-**F1-score:** If there is class imbalance, the F1-Score which is the harmonic mean of recall and precision yields an unbiased assessment.
+**F1-score:** If there is class imbalance, the F1-score, which is the harmonic mean of recall and precision, yields an unbiased assessment.
 
 **Confusion matrix:** A table that compares the predicted labels and actual labels is known as a confusion matrix, and it helps us know where the model is doing wrong.
 
