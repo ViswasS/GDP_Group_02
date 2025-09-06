@@ -83,4 +83,15 @@ Figma (wireframes/designs if needed)
 
 # Application of Machine Learning Models in EdgeCare Triage
 
-Machine learning models are applied in EdgeCare Triage to provide computerized evaluation and decision-making for rashes on the skin. Transfer learning models or CNNs are used to evaluate images shared by patients and identify features to classify the type of rash and predict severity. These visually based features and structured patient metadata are then input into machine learning classification algorithms such as decision trees, random forests, gradient boosting, or neural networks to calculate the levels of risk and recommend cautionary or recuperation steps. The procedure is done using software libraries like TensorFlow or PyTorch for model training and inference but in real-time enabled by on-device deployment to enable patients to be provided with first opinions quickly and to allow for structured triage reports to enable doctor consultations.
+Machine learning models are applied in EdgeCare Triage to provide computerized evaluation and decision-making for rashes on the skin. Transfer learning models or CNNs are used to evaluate images shared by patients and identify features to classify the type of rash and predict severity. These visually based features and structured patient metadata are then input into machine learning classification algorithms such as decision trees, random forests, gradient boosting, or neural networks to calculate the levels of risk and recommend cautionary or recuperation steps. The procedure is done using software libraries like TensorFlow or PyTorch for model training and inference, but in real-time, enabled by on-device deployment to enable patients to be provided with first opinions quickly and to allow for structured triage reports to enable doctor consultations.
+**Future Enhancements for EdgeCare Triage**
+
+**Accuracy & Accessibility**:
+The app will be enhanced to provide more accurate, accessible, and reliable support for skin and rash-related conditions. 
+Multi-language support will allow patients from diverse backgrounds to use the app with ease.
+
+**Improved AI Engine**:
+The AI engine will be further trained to detect a wider range of skin problems, improving accuracy and offering more detailed triage results.
+
+**Appointment Scheduling**:
+Patients will be able to directly connect with doctors when serious skin issues are detected, ensuring timely care.
