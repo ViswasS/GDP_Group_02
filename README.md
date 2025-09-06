@@ -49,3 +49,33 @@ Fusion: Weighted decision rule combining image and symptom results
 Python (TensorFlow/Keras, scikit-learn, OpenCV for preprocessing)
 GitHub (version control, daily commits)
 Figma (wireframes/designs if needed)
+
+# EdgeCare Triage Workflow
+
+1. Patient Symptom Capture
+   
+  Patients enter health information through a guided questionnaire and/or snap a photo of visible symptoms (e.g., rashes).
+
+2. On-Device AI Analysis
+   
+  The app processes the inputs using AI models to identify potential conditions and assign severity rating (Normal, Mild, Moderate, Severe).
+
+3. Personalized Guidance
+
+* Medications.
+
+* Dietary and lifestyle recommendations.
+
+* Clear advice on whether or not an appointment with a doctor is necessary.
+
+4. Triage Report Generation
+   
+  A formatted report is generated summarizing patient feedback, AI results, severity score, and suggested action.
+
+5. Physician Portal Access
+   
+  Physicians access reports securely, verify or override the AI determination, and include notes or treatment plans.
+
+6. Feedback & Follow-Up
+   
+  Patients are provided with updated guidance and notifications for conditions that are long-term or severe, allowing for timely intervention and ongoing care.
