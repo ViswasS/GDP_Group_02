@@ -124,26 +124,26 @@ Limitations of AI recommendations.
 
 # Limitations of EdgeCare Triage
 
-## Limited Dataset for Training AI
+**Limited Dataset for Training AI**
 
 The validity of rash detection depends on the utilized dataset. In the event that the dataset lacks infrequent conditions or different skin tones, predictions may be less accurate.
 
-## Not a Replacement for Professional Diagnosis
+**Not a Replacement for Professional Diagnosis**
 
 The app provides only triage advice and can't replace the diagnosis of an experienced dermatologist.
 
-## Dependency on Image Quality
+**Dependency on Image Quality**
 
 Poor light, unfocused images, or incomplete photos of the rash can lower the validity of AI-based predictions.
 
-## Condition Scope
+**Condition Scope**
 
 Currently only addressing skin rashes and external symptoms. It can't detect internal conditions or complex skin diseases.
 
-## Device Limitations
+**Device Limitations**
 
 On-device AI (TensorFlow Lite) could have worse performance on low-end devices, leading to slow analysis.
 
-## Connectivity Issues
+**Connectivity Issues**
 
 Some features (e.g., access to doctor portal, report syncing) require internet, limiting offline usage.
