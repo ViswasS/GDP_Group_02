@@ -111,3 +111,13 @@ The AI engine will be further trained to detect a wider range of skin problems, 
 
 **Appointment Scheduling**:
 Patients will be able to directly connect with doctors when serious skin issues are detected, ensuring timely care.
+
+**Challenges & Risk Management**
+
+Data availability and quality.
+
+Model interpretability in medical context.
+
+Ethical and privacy concerns.
+
+Limitations of AI recommendations.
