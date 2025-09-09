@@ -94,7 +94,7 @@ We employ the following evaluation metrics to determine how well our picture cat
 
 **Precision:** It represents the number of pictures correctly classified as a specific disease. This minimizes the number of false positives.
 
-**Recall (Sensitivity):** Displays the proportion of actual occurrences of a disease in the real world that were accurately forecasted by the model. It is important in the medical industry because neglecting a condition may prove to be fatal.
+**Recall (Sensitivity):** Displays the proportion of actual occurrences of a disease in the real world that the model accurately forecasted. It is important in the medical industry because neglecting a condition may prove to be fatal.
 
 **F1-score:** If there is class imbalance, the F1-score, which is the harmonic mean of recall and precision, yields an unbiased assessment.
 
@@ -138,7 +138,7 @@ Poor light, unfocused images, or incomplete photos of the rash can lower the val
 
 **Condition Scope**
 
-Currently only addressing skin rashes and external symptoms. It can't detect internal conditions or complex skin diseases.
+Currently only addresses skin rashes and external symptoms. It can't detect internal conditions or complex skin diseases.
 
 **Device Limitations**
 
@@ -146,4 +146,10 @@ On-device AI (TensorFlow Lite) could have worse performance on low-end devices, 
 
 **Connectivity Issues**
 
-Some features (e.g., access to doctor portal, report syncing) require internet, limiting offline usage.
+Some features (e.g., access to the doctor portal, report syncing) require internet, limiting offline usage.
+
+**Data Privacy & Ethics**
+
+The app needs to follow healthcare data regulations like HIPAA and GDPR, which means it has to ensure strong encryption and secure storage for patient information.
+The AI engine should be trained on a variety of datasets to help minimize bias and promote fairness for all users.
+It's also important that patients have control over their data, with clear disclaimers stating that the app is meant for pre-screening purposes and not as a substitute for a proper diagnosis.
