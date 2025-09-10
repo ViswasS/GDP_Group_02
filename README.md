@@ -153,3 +153,11 @@ Some features (e.g., access to the doctor portal, report syncing) require intern
 The app needs to follow healthcare data regulations like HIPAA and GDPR, which means it has to ensure strong encryption and secure storage for patient information.
 The AI engine should be trained on a variety of datasets to help minimize bias and promote fairness for all users.
 It's also important that patients have control over their data, with clear disclaimers stating that the app is meant for pre-screening purposes and not as a substitute for a proper diagnosis.
+
+**Transparency**
+
+* Provide explainable AI outputs so doctors and patients understand why a decision was made.
+
+* Build fairness checks to minimize bias across gender, ethnicity, and skin tone.
+
+* Create a patient-facing transparency report explaining AI limitations.
