@@ -161,3 +161,17 @@ It's also important that patients have control over their data, with clear discl
 * Build fairness checks to minimize bias across gender, ethnicity, and skin tone.
 
 * Create a patient-facing transparency report explaining AI limitations.
+
+# Impact on Healthcare
+
+* Avoids redundant clinic visits with instant pre-screening at home, offloading the hospital burden.
+
+* Facilitates patients with fast consultation, reducing anxiety and guaranteeing on-time medical interventions.
+
+* Improves healthcare access for rural and underprivileged communities via smartphone-based artificial intelligence.
+
+* Helps doctors with structured, decision-ready reports that save time and improve diagnosis accuracy.
+
+* Improves patient privacy by running AI models on-device, maintaining sensitive information secure.
+
+* Supports public health through facilitation of early detection of skin conditions and possible outbreak trends.
