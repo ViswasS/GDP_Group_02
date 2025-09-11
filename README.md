@@ -175,3 +175,13 @@ It's also important that patients have control over their data, with clear discl
 * Improves patient privacy by running AI models on-device, maintaining sensitive information secure.
 
 * Supports public health through facilitation of early detection of skin conditions and possible outbreak trends.
+  100% of your text is likely AI-generated
+
+**Scalability Considerations**
+Patient Growth: Firestore and Storage are designed to automatically scale, effortlessly accommodating thousands of users. Plus, with React Native, you can achieve cross-platform scalability without a hitch.
+
+Doctor Portal: This system allows multiple users to log in at the same time while ensuring secure access. The Role-Based Access Control (RBAC) feature also sets the stage for future multi-clinic operations.
+
+Data Scaling: Firebase Storage is great for handling large uploads, thanks to its compression and lifecycle rules. You can even archive older reports to keep costs down.
+
+Performance: With on-device AI, you can expect responses in under ten seconds without putting a strain on the server. Caching and offline mode further enhance reliability, especially in areas with low bandwidth.
