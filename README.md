@@ -186,3 +186,13 @@ Doctor Portal: This system allows multiple users to log in at the same time whil
 Data Scaling: Firebase Storage is great for handling large uploads, thanks to its compression and lifecycle rules. You can even archive older reports to keep costs down.
 
 Performance: With on-device AI, you can expect responses in under ten seconds without putting a strain on the server. Caching and offline mode further enhance reliability, especially in areas with low bandwidth.
+
+# Advanced Features for Patients
+
+Symptom Timeline: Let patients track how symptoms evolve over days/weeks.
+
+Medication Tracking: Let patients log medication, have AI track interactions.
+
+Offline Mode: Questionnaire and AI processing can be offline, synching when internet is restored.
+
+Wearable Integration: Integration with smartwatches/fitness trackers for vitals (heart rate, temperature) is optional.
