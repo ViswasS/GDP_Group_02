@@ -244,3 +244,13 @@ Test usability with mock patients/doctors.
 Deploy model on-device or cloud.
 
 Collect real user feedback for refinement.
+# Example User Journey
+
+Patient: Takes a photo of rash + answers questionnaire → AI gives “Moderate” rating.
+
+Report Generated: “Possible dermatitis. Recommendation: Consult doctor.”
+
+Doctor Portal: Doctor sees rash photo, patient history, AI suggestion. Confirms “Dermatitis, prescribe topical cream.”
+
+Patient Update: Patient gets push notification with treatment notes & follow-up reminder.
+
