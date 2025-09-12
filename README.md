@@ -196,3 +196,51 @@ Medication Tracking: Let patients log medication, have AI track interactions.
 Offline Mode: Questionnaire and AI processing can be offline, synching when internet is restored.
 
 Wearable Integration: Integration with smartwatches/fitness trackers for vitals (heart rate, temperature) is optional.
+
+# Tools & Frameworks:
+
+TensorFlow/Keras or PyTorch: Model building and training.
+
+OpenCV: Image preprocessing.
+
+scikit-learn: Traditional ML for classification.
+
+Streamlit/Flutter: Prototype front-end for patient interface.
+
+FastAPI/Flask: Backend API for model serving.
+
+ONNX/TFLite: For model deployment on edge devices (mobile).
+
+**Phase 1 – Research & Data Gathering (Weeks 1–3)**
+
+Identify scope diseases.
+
+Collect datasets.
+
+Define preprocessing pipeline.
+
+**Phase 2 – Model Development (Weeks 4–7)**
+
+Train CNN for image recognition.
+
+Test transfer learning models.
+
+Train classification models with image + metadata.
+
+**Phase 3 – Prototype Development (Weeks 8–10)**
+
+Build simple patient app (image upload + feedback).
+
+Integrate triage report generation.
+
+**Phase 4 – Testing & Validation (Weeks 11–13)**
+
+Evaluate accuracy, precision, recall, F1-score.
+
+Test usability with mock patients/doctors.
+
+**Phase 5 – Deployment & Feedback (Weeks 14–15)**
+
+Deploy model on-device or cloud.
+
+Collect real user feedback for refinement.
