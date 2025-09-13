@@ -17,7 +17,7 @@ The app provides a clear triage result within 10 seconds, guiding patients on wh
 
 Doctors have access to a secure web portal where they can view patient reports, confirm or override AI decisions, and update patient history.
 
-# **Overview**
+# Overview
 EdgeCare Triage is a mobile and web app designed to give patients peace of mind before visiting a doctor. Using smart AI that runs directly on the phone, the app keeps personal health data private while providing quick and reliable results. Patients can simply answer a few health questions or snap a photo of a rash to find out if they need medical care within seconds. Doctors can then view these reports through a secure portal, confirm the results, or make adjustments as needed. By helping patients get instant guidance and supporting doctors with clear reports, EdgeCare Triage makes healthcare faster, safer, and more accessible for everyone.
 
 ## Benefits
@@ -27,7 +27,6 @@ Protects patient privacy by running AI on the device, rather than in the cloud.
 Reduces unnecessary clinic visits by offering quick pre-screening.
 
 Supports doctors with decision-ready reports to save time and improve accuracy.
-
 
 # Technologies Used
 **Front-end:**
@@ -81,7 +80,6 @@ Figma (wireframes/designs if needed)
    
   Patients are provided with updated guidance and notifications for conditions that are long-term or severe, allowing for timely intervention and ongoing care.
 
-
 # Application of Machine Learning Models in EdgeCare Triage
 
 Machine learning models are applied in EdgeCare Triage to provide computerized evaluation and decision-making for rashes on the skin. Transfer learning models or CNNs are used to evaluate images shared by patients and identify features to classify the type of rash and predict severity. These visually based features and structured patient metadata are then input into machine learning classification algorithms such as decision trees, random forests, gradient boosting, or neural networks to calculate the levels of risk and recommend cautionary or recuperation steps. The procedure is done using software libraries like TensorFlow or PyTorch for model training and inference, but in real-time, enabled by on-device deployment to enable patients to be provided with first opinions quickly and to allow for structured triage reports to enable doctor consultations.
@@ -102,14 +100,14 @@ We employ the following evaluation metrics to determine how well our picture cat
 
 # Future Enhancements for EdgeCare Triage
 
-**Accuracy & Accessibility**:
+**Accuracy & Accessibility:**
 The app will be enhanced to provide more accurate, accessible, and reliable support for skin and rash-related conditions. 
 Multi-language support will allow patients from diverse backgrounds to use the app with ease.
 
-**Improved AI Engine**:
+**Improved AI Engine:**
 The AI engine will be further trained to detect a wider range of skin problems, improving accuracy and offering more detailed triage results.
 
-**Appointment Scheduling**:
+**Appointment Scheduling:**
 Patients will be able to directly connect with doctors when serious skin issues are detected, ensuring timely care.
 
 **Challenges & Risk Management**
@@ -244,6 +242,7 @@ Test usability with mock patients/doctors.
 Deploy model on-device or cloud.
 
 Collect real user feedback for refinement.
+
 # Example User Journey
 
 Patient: Takes a photo of rash + answers questionnaire → AI gives “Moderate” rating.
