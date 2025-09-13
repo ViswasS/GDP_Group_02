@@ -209,6 +209,8 @@ FastAPI/Flask: Backend API for model serving.
 
 ONNX/TFLite: For model deployment on edge devices (mobile).
 
+# Methodology
+
 **Phase 1 – Research & Data Gathering (Weeks 1–3)**
 
 Identify scope diseases.
