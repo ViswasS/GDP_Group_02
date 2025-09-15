@@ -255,3 +255,11 @@ Doctor Portal: Doctor sees rash photo, patient history, AI suggestion. Confirms 
 
 Patient Update: Patient gets push notification with treatment notes & follow-up reminder.
 
+# Client/Stakeholder Benefits
+
+* Reduced unnecessary clinic visits.
+
+* Structured triage reports for doctors.
+
+* Improved patient confidence and awareness.
+
