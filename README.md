@@ -263,3 +263,15 @@ Patient Update: Patient gets push notification with treatment notes & follow-up 
 
 * Improved patient confidence and awareness.
 
+# Functional Requirements
+
+**The system SHALL:**
+
+The system SHALL allow patients to answer symptom questions through a web or mobile interface.
+
+The system SHALL allow patients to upload or photograph their rash or affected area.
+
+The system SHALL conduct an AI model to classify the image and generate a triage result within 10 seconds.
+
+The system SHALL display the triage result clearly to the patient (e.g., "Seek care", "Monitor at home").
+
