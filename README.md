@@ -275,3 +275,15 @@ The system SHALL conduct an AI model to classify the image and generate a triage
 
 The system SHALL display the triage result clearly to the patient (e.g., "Seek care", "Monitor at home").
 
+**The system MAY**
+
+The system MAY recommend future actions such as scheduling a doctor's visit, OTC medication use, or lifestyle changes.
+
+The system MAY provide export of records by generating and exporting triage history in PDF/CSV format for hospitals or patients.
+
+The system MAY incorporate wearable devices to sync vital signs, including heart rate, temperature, and activity data from smartwatches or fitness trackers.
+
+The system MAY enhance condition coverage to include other medical conditions beyond rashes (e.g., respiratory illness, fever, cough) in future versions.
+
+
+
