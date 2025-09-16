@@ -98,6 +98,9 @@ We employ the following evaluation metrics to determine how well our picture cat
 
 **Confusion matrix:** A table that compares the predicted labels and actual labels is known as a confusion matrix, and it helps us know where the model is doing wrong.
 
+**ROC-AUC (Receiver Operating Characteristic – Area Under Curve)** – Measures the model’s ability to distinguish between classes at various thresholds.
+A high AUC (close to 1) indicates good separability.
+
 # Future Enhancements for EdgeCare Triage
 
 **Accuracy & Accessibility:**
