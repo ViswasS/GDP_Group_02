@@ -296,5 +296,11 @@ Clinical validation: reader study comparing AI vs dermatologist on held-out/hist
 
 Adversarial / distributional checks: evaluate on images from multiple devices, skin tones, and lighting conditions.
 
+# Patient Awareness & Trust Issues
 
+* Patients are hesitant to use pre-screening tools due to privacy and data protection concerns.
+
+* Fear of misuse of sensitive images of health (e.g., skin rashes) keeps early action at bay.
+
+* Many patients ignore early warning signals or delay seeking treatment, potentially worsening ailments.
 
