@@ -304,3 +304,10 @@ Adversarial / distributional checks: evaluate on images from multiple devices, s
 
 * Many patients ignore early warning signals or delay seeking treatment, potentially worsening ailments.
 
+**Delayed or Inappropriate Consultations**
+
+Extremely minor conditions are usually brought to clinics by patients.
+
+Severe symptoms, on the other hand, will not be detected until they worsen, which can lead to delayed hospitalization.
+  
+
