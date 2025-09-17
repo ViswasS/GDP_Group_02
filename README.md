@@ -288,5 +288,13 @@ The system MAY incorporate wearable devices to sync vital signs, including heart
 
 The system MAY enhance condition coverage to include other medical conditions beyond rashes (e.g., respiratory illness, fever, cough) in future versions.
 
+**Robustness, evaluation and validation**
+
+Metrics: sensitivity (recall), specificity, precision, F1, per-class ROC-AUC; calibration (reliability diagrams).
+
+Clinical validation: reader study comparing AI vs dermatologist on held-out/histopathology-labeled cases. Use inter-rater agreement (kappa) and actionable thresholds for triage.
+
+Adversarial / distributional checks: evaluate on images from multiple devices, skin tones, and lighting conditions.
+
 
 
