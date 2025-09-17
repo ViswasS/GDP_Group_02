@@ -85,8 +85,10 @@ Figma (wireframes/designs if needed)
 Machine learning models are applied in EdgeCare Triage to provide computerized evaluation and decision-making for rashes on the skin. Transfer learning models or CNNs are used to evaluate images shared by patients and identify features to classify the type of rash and predict severity. These visually based features and structured patient metadata are then input into machine learning classification algorithms such as decision trees, random forests, gradient boosting, or neural networks to calculate the levels of risk and recommend cautionary or recuperation steps. The procedure is done using software libraries like TensorFlow or PyTorch for model training and inference, but in real-time, enabled by on-device deployment to enable patients to be provided with first opinions quickly and to allow for structured triage reports to enable doctor consultations.
 
 # Evaluation Metrics
+To ensure that EdgeCare Triage provides accurate, reliable, and safe pre-screening results, we will evaluate our AI model and system performance using a combination of model performance metrics and system-level performance metrics:
 
-We employ the following evaluation metrics to determine how well our picture categorization model performs:
+### MODEL PERFORMANCE METRICS:
+These metrics evaluate how well the AI model classifies images of rashes/skin conditions
  
 **Accuracy:** The number of correctly classified pictures out of the total photos is called accuracy. It provides an overall idea of the performance of the model.
 
