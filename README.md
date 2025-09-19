@@ -338,3 +338,8 @@ Description: Secure login page (basic auth) where doctors can view patient submi
 Goal: Give doctors access to triage data for testing workflows.
 
 Prototype Output: Displays dummy patient entries with symptom, image preview, and mock triage result.
+
+**Prototype Development Progress**
+
+I’ve worked on the planned prototypes, including the questionnaire interface, image upload, mock AI triage, result display,
+doctor portal, database handling, workflow integration, and documentation. The basic functional flow is ready with placeholder outputs for this phase.
