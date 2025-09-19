@@ -103,6 +103,14 @@ These metrics evaluate how well the AI model classifies images of rashes/skin co
 **ROC-AUC (Receiver Operating Characteristic – Area Under Curve)** – Measures the model’s ability to distinguish between classes at various thresholds.
 A high AUC (close to 1) indicates good separability.
 
+### System Performance Metrics:
+Even if the model is accurate, it must work quickly and securely for patients and doctors.
+
+**Availability / Uptime** – System reliability, ideally 99%+ availability for web portal access.
+
+**Latency / Response Time** – Time taken to provide triage result after an image is submitted.
+Goal: ≤ 10 seconds as per user story acceptance criteria.
+
 # Future Enhancements for EdgeCare Triage
 
 **Accuracy & Accessibility:**
