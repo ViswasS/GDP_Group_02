@@ -331,3 +331,10 @@ Build EHR integration for hospital use.
 Implement global multilingual support for broader adoption.
   
 
+# Basic Doctor Portal
+
+Description: Secure login page (basic auth) where doctors can view patient submissions.
+
+Goal: Give doctors access to triage data for testing workflows.
+
+Prototype Output: Displays dummy patient entries with symptom, image preview, and mock triage result.
