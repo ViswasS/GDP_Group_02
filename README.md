@@ -311,5 +311,15 @@ Adversarial / distributional checks: evaluate on images from multiple devices, s
 Extremely minor conditions are usually brought to clinics by patients.
 
 Severe symptoms, on the other hand, will not be detected until they worsen, which can lead to delayed hospitalization.
+
+**Expand coverage to more diseases (beyond skin conditions).**
+
+Integrate multi-modal data (images + patient history + text reports).
+
+Add AI explainability dashboards for transparency.
+
+Build EHR integration for hospital use.
+
+Implement global multilingual support for broader adoption.
   
 
