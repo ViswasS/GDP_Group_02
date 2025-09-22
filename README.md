@@ -108,6 +108,8 @@ Even if the model is accurate, it must work quickly and securely for patients an
 
 **Availability / Uptime** – System reliability, ideally 99%+ availability for web portal access.
 
+**Throughput** – Number of images the system can handle per minute under normal load. Important for scaling when multiple users are active.
+
 **Latency / Response Time** – Time taken to provide triage result after an image is submitted.
 Goal: ≤ 10 seconds as per user story acceptance criteria.
 
