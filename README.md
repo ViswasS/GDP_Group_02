@@ -343,3 +343,13 @@ Prototype Output: Displays dummy patient entries with symptom, image preview, an
 
 I’ve worked on the planned prototypes, including the questionnaire interface, image upload, mock AI triage, result display,
 doctor portal, database handling, workflow integration, and documentation. The basic functional flow is ready with placeholder outputs for this phase.
+
+# Usability Enhancements
+
+Multi-language support: Auto-translate questions/reports (start with English + 1–2 local languages).
+
+Accessibility Features: Voice-activated questionnaire for elderly or visually impaired patients.
+
+Chatbot-style Symptom Entry: Instead of bare forms, patients can "chat" with a bot that guides them through.
+
+Emergency Detection: If a critical condition is detected, the app can trigger an alert like "Seek emergency care immediately" or even auto-dial 911 (configurable).
