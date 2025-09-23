@@ -364,3 +364,13 @@ Patient workflow (send skin complaint, severe condition handling).
 Doctor workflow (review and manage complaints).
 
 Recorded system actions, inputs, and outputs for each scenario.
+
+**Core Features**
+
+Upload skin images for instant AI analysis.
+
+Symptom questionnaire for better condition matching.
+
+Preliminary diagnosis with severity levels.
+
+Precautionary measures & next-step recommendations.
