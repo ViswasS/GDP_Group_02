@@ -355,3 +355,12 @@ Accessibility Features: Voice-activated questionnaire for elderly or visually im
 Chatbot-style Symptom Entry: Instead of bare forms, patients can "chat" with a bot that guides them through.
 
 Emergency Detection: If a critical condition is detected, the app can trigger an alert like "Seek emergency care immediately" or even auto-dial 911 (configurable).
+
+
+#I participated in creating use cases for the EdgeCare Triage project, including#
+
+Patient workflow (send skin complaint, severe condition handling).
+
+Doctor workflow (review and manage complaints).
+
+Recorded system actions, inputs, and outputs for each scenario.
