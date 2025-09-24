@@ -423,7 +423,7 @@ Web/Mobile support with secure login.
 
 # Scalability / Future Vision
 
-*Expand Beyond Skin*
+**Expand Beyond Skin**
 
 Add modules for cough detection (via audio).
 
@@ -431,13 +431,13 @@ Eye infection detection.
 
 Fever detection via facial thermal imaging.
 
-*Offline Mode (Edge AI)*
+**Offline Mode (Edge AI)**
 
 Full AI inference without internet → great for rural/low-connectivity regions.
 
 Syncs results when internet is available.
 
-*Public Health Impact*
+**Public Health Impact**
 
 Detect outbreak clusters (measles, monkeypox, etc.) by analyzing case density.
 
