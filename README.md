@@ -374,3 +374,43 @@ Symptom questionnaire for better condition matching.
 Preliminary diagnosis with severity levels.
 
 Precautionary measures & next-step recommendations.
+
+## Project Architecture
+
+The overall flow of EdgeCare Triage is as follows:
+
+**Dataset**
+
+Collect medical image datasets (skin conditions).
+
+Include patient metadata (age, symptoms, duration, etc.).
+
+**Preprocessing**
+
+Clean and normalize images.
+
+Perform augmentation (rotation, scaling, flipping).
+
+Handle metadata (encoding, scaling).
+
+**Training**
+
+Train deep learning models (CNN, ResNet, EfficientNet) on image data.
+
+Use classification models (Logistic Regression, XGBoost, Random Forest) for severity and decision support.
+
+Evaluate performance (accuracy, precision, recall, F1-score).
+
+**Model**
+
+Save trained models in a modular format (TensorFlow .h5 / PyTorch .pt).
+
+Add explainability tools (Grad-CAM heatmaps, SHAP feature importance).
+
+**Frontend**
+
+Patient interface (upload images, view results, get reports).
+
+Doctor/Admin dashboard (review reports, case analytics).
+
+Web/Mobile support with secure login.
