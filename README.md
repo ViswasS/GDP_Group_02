@@ -433,12 +433,28 @@ Fever detection via facial thermal imaging.
 
 **Offline Mode (Edge AI)**
 
-Full AI inference without internet → great for rural/low-connectivity regions.
+Full AI inference without an internet connection → ideal for rural/low-connectivity regions.
 
-Syncs results when internet is available.
+Syncs results when the internet is available.
 
 **Public Health Impact**
 
-Detect outbreak clusters (measles, monkeypox, etc.) by analyzing case density.
+Detect outbreak clusters (such as measles and monkeypox) by analyzing case density.
 
 Anonymous data sharing with health authorities.
+
+**Observability**
+
+Metrics catalog (dimensions, business KPIs)
+
+Instrumentation for React Native, web portal, and backend 
+
+Correlation model (traceId/requestId/caseId/modelVersion)
+
+Alerting thresholds and a runbook checklist
+
+Dashboards to build (Patient, Latency, Reliability, Portal Perf, Model Monitor, Backlog)
+
+Privacy/Retention/Access policies and sampling strategy
+
+Testing observability (synthetics, chaos, load validation)
