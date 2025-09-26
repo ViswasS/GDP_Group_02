@@ -474,3 +474,9 @@ Containerization: Deploy backend services with Docker/Kubernetes for scalability
 Edge Optimization: Quantization/Pruning for smaller AI model size → faster on-device performance.
 
 Load Testing: Simulate thousands of concurrent patients uploading images.
+
+
+**Stakeholder Goals: **
+Patient: They want a quick assessment of their condition, guidance on self-care, and clarity on when to consult a professional.
+Physicians: They need organized triage reports that include severity ratings to help cut down on consultation time.
+Healthcare Systems: Their goal is to minimize unnecessary visits and make the most of their resources.
