@@ -458,3 +458,9 @@ Dashboards to build (Patient, Latency, Reliability, Portal Perf, Model Monitor, 
 Privacy/Retention/Access policies and sampling strategy
 
 Testing observability (synthetics, chaos, load validation)
+
+**Constraints for the Data**
+
+Limited access to high-quality medical datasets.
+
+Requirement for refined and well-labeled images.
