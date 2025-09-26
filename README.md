@@ -464,3 +464,13 @@ Testing observability (synthetics, chaos, load validation)
 Limited access to high-quality medical datasets.
 
 Requirement for refined and well-labeled images.
+
+**Engineering & Deployment**
+
+CI/CD Pipeline: Automated testing + deployment with GitHub Actions or GitLab CI.
+
+Containerization: Deploy backend services with Docker/Kubernetes for scalability.
+
+Edge Optimization: Quantization/Pruning for smaller AI model size → faster on-device performance.
+
+Load Testing: Simulate thousands of concurrent patients uploading images.
