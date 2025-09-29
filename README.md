@@ -496,3 +496,9 @@ Follow-up appointments/reminders can be scheduled by doctors within the system.
 **Doctor-to-Doctor Communication**
 
 Secure referral process → one doctor can refer the triage case to a specialist.
+
+# Limitations
+
+**Dataset Size and Diversity**
+
+The model’s accuracy will depend heavily on the quality and diversity of the dataset used. If the dataset does not include a wide range of skin tones, lighting conditions, or rare skin conditions, the predictions may be biased or inaccurate.
