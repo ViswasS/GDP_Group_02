@@ -502,3 +502,13 @@ Secure referral process → one doctor can refer the triage case to a specialist
 **Dataset Size and Diversity**
 
 The model’s accuracy will depend heavily on the quality and diversity of the dataset used. If the dataset does not include a wide range of skin tones, lighting conditions, or rare skin conditions, the predictions may be biased or inaccurate.
+
+**Success Criteria**
+
+Early prototype successfully classifies at least 3 common skin conditions.
+
+Provides actionable precautionary measures and clear next steps.
+
+Generates structured reports that doctors can validate and trust.
+
+Achieves explainability through Grad-CAM/SHAP visualizations.
