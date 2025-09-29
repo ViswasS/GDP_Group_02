@@ -480,3 +480,19 @@ Load Testing: Simulate thousands of concurrent patients uploading images.
 Patient: They want a quick assessment of their condition, guidance on self-care, and clarity on when to consult a professional.
 Physicians: They need organized triage reports that include severity ratings to help cut down on consultation time.
 Healthcare Systems: Their goal is to minimize unnecessary visits and make the most of their resources.
+
+# Doctor-Side Add-Ons
+
+**E-Prescription & Notes**
+
+Enable doctors to generate electronic prescriptions (PDF) within the portal.
+
+Can be downloaded by patients.
+
+**Follow-up Scheduling**
+
+Follow-up appointments/reminders can be scheduled by doctors within the system.
+
+**Doctor-to-Doctor Communication**
+
+Secure referral process → one doctor can refer the triage case to a specialist.
