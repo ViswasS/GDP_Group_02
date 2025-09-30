@@ -512,3 +512,9 @@ Provides actionable precautionary measures and clear next steps.
 Generates structured reports that doctors can validate and trust.
 
 Achieves explainability through Grad-CAM/SHAP visualizations.
+
+**Requirements Engineering Work**
+The main activities such as elicitation, analysis, documentation, validation, and management.
+I also understood the roles of different participants, such as stakeholders, developers, product owners, project managers, and testers, in this context.
+Furthermore, I learned functional vs. non-functional requirements, key project artifacts such as SRS, user stories, and use case diagrams, and the sequencing of steps in requirement elicitation.
+
