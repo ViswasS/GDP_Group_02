@@ -524,3 +524,10 @@ Deployment on edge or mobile devices requires lightweight and optimized models t
 
 Cloud integration may be necessary for heavy processing, but this raises latency and connectivity concerns.
 
+## Additional Assessment Metrics
+
+* Fairness metrics → Balanced accuracy for diverse skin tones, genders, age ranges.
+
+* Resource usage → Monitor AI models' RAM/CPU usage on-device to illustrate scalability to low-end phones.
+
+* User satisfaction surveys → Incorporate usability testing with SUS (System Usability Score) for patient and physician portals.
