@@ -518,3 +518,9 @@ The main activities such as elicitation, analysis, documentation, validation, an
 I also understood the roles of different participants, such as stakeholders, developers, product owners, project managers, and testers, in this context.
 Furthermore, I learned functional vs. non-functional requirements, key project artifacts such as SRS, user stories, and use case diagrams, and the sequencing of steps in requirement elicitation.
 
+**Technical Constraints**
+
+Deployment on edge or mobile devices requires lightweight and optimized models to handle limited compute power.
+
+Cloud integration may be necessary for heavy processing, but this raises latency and connectivity concerns.
+
