@@ -476,7 +476,7 @@ Edge Optimization: Quantization/Pruning for smaller AI model size → faster on-
 Load Testing: Simulate thousands of concurrent patients uploading images.
 
 
-**Stakeholder Goals: **
+**Stakeholder Goals:**
 Patient: They want a quick assessment of their condition, guidance on self-care, and clarity on when to consult a professional.
 Physicians: They need organized triage reports that include severity ratings to help cut down on consultation time.
 Healthcare Systems: Their goal is to minimize unnecessary visits and make the most of their resources.
@@ -502,6 +502,11 @@ Secure referral process → one doctor can refer the triage case to a specialist
 **Dataset Size and Diversity**
 
 The model’s accuracy will depend heavily on the quality and diversity of the dataset used. If the dataset does not include a wide range of skin tones, lighting conditions, or rare skin conditions, the predictions may be biased or inaccurate.
+
+**Image Quality Sensitivity**
+
+Blurry, poorly lit, or partially cropped images may lead to incorrect triage results. The system will need to warn users but cannot fully guarantee accuracy in such cases.
+
 
 **Success Criteria**
 
