@@ -531,3 +531,11 @@ Cloud integration may be necessary for heavy processing, but this raises latency
 * Resource usage → Monitor AI models' RAM/CPU usage on-device to illustrate scalability to low-end phones.
 
 * User satisfaction surveys → Incorporate usability testing with SUS (System Usability Score) for patient and physician portals.
+## Patient App: questionnaire + image upload + result screen (mocked AI)
+
+AI Service: fixed rules/model stub returning realistic results
+
+Doctor Portal: case list + detail page + override action
+
+If you want, I can turn this into a one-pager for your GitHub wiki or sketch minimal API endpoints next.
+
