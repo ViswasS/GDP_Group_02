@@ -544,3 +544,9 @@ Doctor Portal: case list + detail page + override action
 
 If you want, I can turn this into a one-pager for your GitHub wiki or sketch minimal API endpoints next.
 
+## Ethical Considerations
+
+AI must be explainable and transparent in decision-making.
+
+Bias mitigation to ensure fairness across demographics.
+
