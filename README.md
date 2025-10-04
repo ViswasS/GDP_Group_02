@@ -507,8 +507,11 @@ The model’s accuracy will depend heavily on the quality and diversity of the d
 
 Blurry, poorly lit, or partially cropped images may lead to incorrect triage results. The system will need to warn users but cannot fully guarantee accuracy in such cases.
 
+**Scope of Diagnosis**
 
-**Success Criteria**
+This tool is for preliminary triage and cannot replace a medical professional’s diagnosis. It may miss complex or non-visual symptoms and should be treated as a first step, not a final medical opinion.
+
+# Success Criteria
 
 Early prototype successfully classifies at least 3 common skin conditions.
 
