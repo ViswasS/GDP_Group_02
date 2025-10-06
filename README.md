@@ -562,3 +562,8 @@ To ensure the reliability and accuracy of the EdgeCare Triage system, different 
 The interface should be straightforward, intuitive, and user-friendly for patients who may not be tech-savvy.
 
 Results, alerts, and guidance must be presented in clear, actionable language (like “apply topical care” or “schedule a doctor visit”), steering clear of any technical jargon or errors.
+
+# References & Useful Links
+1. - [Dermnet Skin Disease Dataset | EDA](https://www.kaggle.com/code/akshitgupta146/dermnet-skin-disease-dataset-eda/input)
+  
+
