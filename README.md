@@ -566,4 +566,16 @@ Results, alerts, and guidance must be presented in clear, actionable language (l
 # References & Useful Links
 1. - [Dermnet Skin Disease Dataset | EDA](https://www.kaggle.com/code/akshitgupta146/dermnet-skin-disease-dataset-eda/input)
   
+### Primary Users
 
+**Patients (18–60 years):** Mild to moderate skin symptomatic individuals who want instant consultation prior to a doctor's visit.
+
+**Older Patients (60+):** May employ voice-guided or easy UI for symptom input.
+
+**Rural/Remote Users:** People who have poor dermatologist access and can take advantage of offline triage capability.
+
+### Secondary Users
+
+**Doctors/Dermatologists:** Use the secure web portal to validate AI responses, approve treatment, and update patient history.
+
+**Healthcare Administrators:** Use aggregated and anonymized data to identify patterns in outbreaks and resource allocation.
