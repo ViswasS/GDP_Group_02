@@ -579,3 +579,9 @@ Results, alerts, and guidance must be presented in clear, actionable language (l
 **Doctors/Dermatologists:** Use the secure web portal to validate AI responses, approve treatment, and update patient history.
 
 **Healthcare Administrators:** Use aggregated and anonymized data to identify patterns in outbreaks and resource allocation.
+
+## Maintainability
+
+AI models on the Edge device should be updateable independently, without requiring a full system reinstall.
+
+The system code should be modular to allow easy addition of new features, such as new exercise types or monitoring metrics.
