@@ -564,7 +564,7 @@ The interface should be straightforward, intuitive, and user-friendly for patien
 Results, alerts, and guidance must be presented in clear, actionable language (like “apply topical care” or “schedule a doctor visit”), steering clear of any technical jargon or errors.
 
 # References & Useful Links
-1. - [Dermnet Skin Disease Dataset | EDA](https://www.kaggle.com/code/akshitgupta146/dermnet-skin-disease-dataset-eda/input)
+1. - [PH2 Dataset](https://www.kaggle.com/code/herilchangwal/u-net-with-resnet-50-on-ph2-dataset/input)
 
 
   
