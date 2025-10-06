@@ -587,3 +587,9 @@ Results, alerts, and guidance must be presented in clear, actionable language (l
 AI models on the Edge device should be updateable independently, without requiring a full system reinstall.
 
 The system code should be modular to allow easy addition of new features, such as new exercise types or monitoring metrics.
+
+##  Stability & Reliability
+
+The application should gracefully handle crashes, network hiccups, or unexpected shutdowns without losing any data.
+
+Generated triage reports and notifications need to stay consistent and accurate, even when the workload varies.
