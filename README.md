@@ -593,3 +593,21 @@ The system code should be modular to allow easy addition of new features, such a
 The application should gracefully handle crashes, network hiccups, or unexpected shutdowns without losing any data.
 
 Generated triage reports and notifications need to stay consistent and accurate, even when the workload varies.
+
+# Public Health & Ethical Additions
+
+a. Anonymous Trend Dashboard
+
+Batch case data (anonymous) to show outbreak trends.
+
+May be useful for public health surveillance (e.g., measles rash cluster).
+
+b. Privacy Settings Panel
+
+Let patients control what data is stored, disclosed to physicians, or deleted.
+
+Add a HIPAA/GDPR compliance note and easy consent UI.
+
+c. Bias & Fairness Evaluation
+
+Log evaluation across skin tones / age / gender to show fairness metrics (balanced accuracy, per-group ROC-AUC).
