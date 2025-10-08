@@ -511,6 +511,10 @@ Blurry, poorly lit, or partially cropped images may lead to incorrect triage res
 
 This tool is for preliminary triage and cannot replace a medical professional’s diagnosis. It may miss complex or non-visual symptoms and should be treated as a first step, not a final medical opinion.
 
+**Privacy and Security Concerns**
+
+Even though the model is designed for on-device inference, storing patient images and results securely is critical. Any misconfiguration could pose data privacy risks.
+
 # Success Criteria
 
 Early prototype successfully classifies at least 3 common skin conditions.
