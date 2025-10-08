@@ -614,9 +614,15 @@ Add a HIPAA/GDPR compliance note and easy consent UI.
 
 c. Bias & Fairness Evaluation
 
-Log evaluation across skin tones / age / gender to show fairness metrics (balanced accuracy, per-group ROC-AUC).
+Log evaluation across skin tones/age/gender to show fairness metrics (balanced accuracy, per-group ROC-AUC).
 
 ## Interoperability
-The AI-generated outputs should be easily understandable by all types of users doctors, patients, and caregivers.
+The AI-generated outputs should be easily understandable by all types of users: doctors, patients, and caregivers.
 
 Each triage result must include step-by-step instructions and clear precautionary measures, ensuring users can confidently follow the suggested next steps without medical or technical expertise.
+
+## Maintainability
+
+AI models and classification algorithms should be updatable independently, so there’s no need for a complete system reinstall.
+
+The codebase must remain modular, allowing for easy addition of new disease categories, reporting features, or analytics tools.
