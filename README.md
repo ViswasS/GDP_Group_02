@@ -644,3 +644,8 @@ Case ID: Unique per case (TRIAGE_CASE.case_id). Patient ID: Patient owning the c
 Questionnaire ID: Associated questionnaire used (TRIAGE_CASE.questionnaire_id).
 Emergency Flag: Whether or not the case is flagged as an emergency (TRIAGE_CASE.is_emergency). 
 Assigned Doctor: Optional doctor assigned (TRIAGE_CASE.doctor_id).
+
+## Images (Clinical Photos)
+Image ID: Unique ID for every image uploaded (IMAGE.image_id). 
+Case ID: Case that this image belongs to (IMAGE.case_id).
+Question Flags: Tags/notes linking image to specific questions or findings (IMAGE.question_flags).
