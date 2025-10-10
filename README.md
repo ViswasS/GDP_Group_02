@@ -515,6 +515,10 @@ This tool is for preliminary triage and cannot replace a medical professional’
 
 Even though the model is designed for on-device inference, storing patient images and results securely is critical. Any misconfiguration could pose data privacy risks.
 
+**Doctor Portal Usability**
+
+The doctor portal is a prototype and may have limited filtering, search, and reporting features in the first iteration.
+
 # Success Criteria
 
 Early prototype successfully classifies at least 3 common skin conditions.
