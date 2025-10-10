@@ -630,3 +630,11 @@ Each triage result must include step-by-step instructions and clear precautionar
 AI models and classification algorithms should be updatable independently, so there’s no need for a complete system reinstall.
 
 The codebase must remain modular, allowing for easy addition of new disease categories, reporting features, or analytics tools.
+
+## Security
+
+Patient information in the form of images, symptom entries, and reports produced must be securely stored using Advanced Encryption Standard-256 encryption and securely transmitted using Transport Layer Security 1.3.
+
+Patient and physician user accounts need to be secured with top-of-the-line authentication mechanisms such as two-factor authentication (2FA) and at least a 12-character password to prevent unauthorized access.
+
+End-to-end triage processing, from upload to display of results, must be achieved in under 10 seconds with 99% reliability.
