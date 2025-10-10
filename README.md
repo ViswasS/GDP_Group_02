@@ -638,3 +638,9 @@ Patient information in the form of images, symptom entries, and reports produced
 Patient and physician user accounts need to be secured with top-of-the-line authentication mechanisms such as two-factor authentication (2FA) and at least a 12-character password to prevent unauthorized access.
 
 End-to-end triage processing, from upload to display of results, must be achieved in under 10 seconds with 99% reliability.
+
+## Triage Case Details
+Case ID: Unique per case (TRIAGE_CASE.case_id). Patient ID: Patient owning the case (TRIAGE_CASE.patient_id).
+Questionnaire ID: Associated questionnaire used (TRIAGE_CASE.questionnaire_id).
+Emergency Flag: Whether or not the case is flagged as an emergency (TRIAGE_CASE.is_emergency). 
+Assigned Doctor: Optional doctor assigned (TRIAGE_CASE.doctor_id).
