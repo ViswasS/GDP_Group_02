@@ -663,3 +663,8 @@ Patient: Limited to their own triage history, images, and results.
 Authentication: Strong password policy with optional Multi-Factor Authentication (MFA) through mfa_enabled in the USER table.
 
 Session Control: Sessions are controlled through the Session table in order to keep each login time-limited and traceable through created_time and expired_time.
+
+## Availability
+Users should be able to access the application to view initial diagnoses and view precautionary measures even if the central server is down for a brief period. The system must support at least 99.5% uptime for all mission-critical services to ensure round-the-clock availability.
+
+It must support up to 1,000 concurrent users without degradation in response time, with responses occurring less than 5 seconds per request.
