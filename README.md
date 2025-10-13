@@ -649,3 +649,17 @@ Assigned Doctor: Optional doctor assigned (TRIAGE_CASE.doctor_id).
 Image ID: Unique ID for every image uploaded (IMAGE.image_id). 
 Case ID: Case that this image belongs to (IMAGE.case_id).
 Question Flags: Tags/notes linking image to specific questions or findings (IMAGE.question_flags).
+
+## Access Controls
+
+Role-Based Access Control (RBAC): User access is determined by the Role attribute in the USER table and admin_level in ADMIN_PROFILE.
+
+Admin: Full access to user administration, system logs, triage cases, and AI models.
+
+Doctor: Access to assigned or escalated triage cases, possible to review, confirm, or override AI results.
+
+Patient: Limited to their own triage history, images, and results.
+
+Authentication: Strong password policy with optional Multi-Factor Authentication (MFA) through mfa_enabled in the USER table.
+
+Session Control: Sessions are controlled through the Session table in order to keep each login time-limited and traceable through created_time and expired_time.
