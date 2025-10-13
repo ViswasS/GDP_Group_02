@@ -668,3 +668,11 @@ Session Control: Sessions are controlled through the Session table in order to k
 Users should be able to access the application to view initial diagnoses and view precautionary measures even if the central server is down for a brief period. The system must support at least 99.5% uptime for all mission-critical services to ensure round-the-clock availability.
 
 It must support up to 1,000 concurrent users without degradation in response time, with responses occurring less than 5 seconds per request.
+
+##  Submission of Triage Cases
+
+Related Tables: TRIAGE_CASE, QUESTIONNAIRE, IMAGE
+
+Description: Patients submit triage cases by responding to questionnaires and uploading images. 
+
+Each case points to a specific patient, questionnaire, and doctor association.
