@@ -467,7 +467,6 @@ Edge Optimization: Quantization/Pruning for smaller AI model size → faster on-
 
 Load Testing: Simulate thousands of concurrent patients uploading images.
 
-
 **Stakeholder Goals:**
 Patient: They want a quick assessment of their condition, guidance on self-care, and clarity on when to consult a professional.
 Physicians: They need organized triage reports that include severity ratings to help cut down on consultation time.
@@ -539,6 +538,7 @@ Cloud integration may be necessary for heavy processing, but this raises latency
 * Resource usage → Monitor AI models' RAM/CPU usage on-device to illustrate scalability to low-end phones.
 
 * User satisfaction surveys → Incorporate usability testing with SUS (System Usability Score) for patient and physician portals.
+
 ## Patient App: questionnaire + image upload + result screen (mocked AI)
 
 AI Service: fixed rules/model stub returning realistic results
@@ -566,9 +566,13 @@ Results, alerts, and guidance must be presented in clear, actionable language (l
 # References & Useful Links
 1. - [PH2 Dataset](https://www.kaggle.com/code/herilchangwal/u-net-with-resnet-50-on-ph2-dataset/input)
 
-
   
 ### Primary Users
+The EdgeCare Triage system manages two main categories of data:
+
+Patient-side data — symptom responses, images, AI triage results, which is grouped by age.
+
+Doctor-side data — feedback, overrides, and historical records.
 
 **Patients (18–60 years):** Mild to moderate skin symptomatic individuals who want instant consultation prior to a doctor's visit.
 
