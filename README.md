@@ -290,7 +290,6 @@ The system SHALL conduct an AI model to classify the image and generate a triage
 
 The system SHALL display the triage result clearly to the patient (e.g., "Seek care", "Monitor at home").
 
-
 **The system MAY**
 
 The system MAY recommend future actions such as scheduling a doctor's visit, OTC medication use, or lifestyle changes.
@@ -300,7 +299,6 @@ The system MAY provide export of records by generating and exporting triage hist
 The system MAY incorporate wearable devices to sync vital signs, including heart rate, temperature, and activity data from smartwatches or fitness trackers.
 
 The system MAY enhance condition coverage to include other medical conditions beyond rashes (e.g., respiratory illness, fever, cough) in future versions.
-
 
 **Robustness, evaluation and validation**
 
@@ -318,13 +316,11 @@ Adversarial / distributional checks: evaluate on images from multiple devices, s
 
 * Many patients ignore early warning signals or delay seeking treatment, potentially worsening ailments.
 
-
 **Delayed or Inappropriate Consultations**
 
 * Extremely minor conditions are usually brought to clinics by patients.
 
 * Severe symptoms, on the other hand, will not be detected until they worsen, which can lead to delayed hospitalization.
-
 
 **Expand coverage to more diseases (beyond skin conditions).**
 
@@ -335,7 +331,6 @@ Adversarial / distributional checks: evaluate on images from multiple devices, s
 * Build EHR integration for hospital use.
 
 * Implement global multilingual support for broader adoption.
-  
 
 # Basic Doctor Portal
 
@@ -344,7 +339,6 @@ Description: Secure login page (basic auth) where doctors can view patient submi
 Goal: Give doctors access to triage data for testing workflows.
 
 Prototype Output: Displays dummy patient entries with symptom, image preview, and mock triage result.
-
 
 **Prototype Development Progress**
 
@@ -360,7 +354,6 @@ Accessibility Features: Voice-activated questionnaire for elderly or visually im
 Chatbot-style Symptom Entry: Instead of bare forms, patients can "chat" with a bot that guides them through.
 
 Emergency Detection: If a critical condition is detected, the app can trigger an alert like "Seek emergency care immediately" or even auto-dial 911 (configurable).
-
 
 **participated in creating use cases for the EdgeCare Triage project, including**
 
@@ -419,7 +412,6 @@ Patient interface (upload images, view results, get reports).
 Doctor/Admin dashboard (review reports, case analytics).
 
 Web/Mobile support with secure login.
-
 
 # Scalability / Future Vision
 
