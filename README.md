@@ -672,3 +672,10 @@ Related Tables: TRIAGE_CASE, QUESTIONNAIRE, IMAGE
 Description: Patients submit triage cases by responding to questionnaires and uploading images. 
 
 Each case points to a specific patient, questionnaire, and doctor association.
+
+## Regular Security Audits
+Conduct periodic vulnerability scans, code audits, and penetration testing.
+
+All administrator and doctor activities are written to the AUDIT_LOG table through fields such as user_id, action.
+
+Logs are immutable and retained for compliance and audit purposes.
