@@ -679,3 +679,25 @@ Conduct periodic vulnerability scans, code audits, and penetration testing.
 All administrator and doctor activities are written to the AUDIT_LOG table through fields such as user_id, action.
 
 Logs are immutable and retained for compliance and audit purposes.
+
+## Update Demographic Information
+
+Goal: Allow patients to update or correct their own individual details.
+
+Actor: Patient
+
+Inputs:
+
+Updated demographic data (e.g., gender, age, allergies, known conditions).
+
+System Actions:
+
+Confirm the input data.
+
+Update the patient's record within the database.
+
+Securely store the updated data.
+
+Outputs:
+
+Success message for demographic data update.
