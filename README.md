@@ -290,6 +290,14 @@ The system SHALL conduct an AI model to classify the image and generate a triage
 
 The system SHALL display the triage result clearly to the patient (e.g., "Seek care", "Monitor at home").
 
+**The system SHOULD:**
+
+The system SHOULD accept standard format images (JPG, PNG), permit questionnaires in multiple languages, and provide accessibility options such as voice input and large text size.
+
+The system SHOULD detect blurry or blurred by mistake images and notify patients early to retake if necessary.
+
+The system SHOULD make symptom analysis offline possible using device-based AI, with the reports and updates being automatically synchronized when online.
+
 **The system MAY**
 
 The system MAY recommend future actions such as scheduling a doctor's visit, OTC medication use, or lifestyle changes.
