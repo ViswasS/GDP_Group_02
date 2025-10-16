@@ -701,3 +701,10 @@ Securely store the updated data.
 Outputs:
 
 Success message for demographic data update.
+
+## Patient Profile
+Patient_ID: ID for each patient.
+
+Language: Preferred language of communication for the patient.
+
+Consent_Status: Whether or not the patient has consented previously.
