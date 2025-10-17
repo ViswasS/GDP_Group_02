@@ -732,3 +732,14 @@ Related Tables: DOCTOR_REVIEW, TRIAGE_CASE, AUDIT_LOG
 Description: Doctors can check or override AI results and add comments. 
 
 All review operations are traced for auditing purposes.
+
+## User
+User_ID: Identifier for each user in the system.
+
+Role: Represents the user's role (Admin_Profile, Doctor_Profile, or Patient_Profile).
+
+Email: User's registered email address for authentication.
+
+Password: Password encrypted to enable secure login.
+
+MFA_Enabled: Multi-Factor Authentication is enabled for the user.
