@@ -716,3 +716,11 @@ Patient_ID: ID for each patient.
 Language: Preferred language of communication for the patient.
 
 Consent_Status: Whether or not the patient has consented previously.
+
+## Data Backup and Recovery
+
+Automatic Daily Backups: Database and media (images, results) backed up on a daily basis to secure cloud storage.
+
+Version Control: All backups are time-stamped and can be rolled back to recover.
+
+Recovery Policy: Supports point-in-time recovery for important tables such as TRIAGE_CASE, USER
