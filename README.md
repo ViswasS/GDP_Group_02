@@ -724,3 +724,11 @@ Automatic Daily Backups: Database and media (images, results) backed up on a dai
 Version Control: All backups are time-stamped and can be rolled back to recover.
 
 Recovery Policy: Supports point-in-time recovery for important tables such as TRIAGE_CASE, USER
+
+## Doctor Review and Decision
+
+Related Tables: DOCTOR_REVIEW, TRIAGE_CASE, AUDIT_LOG
+
+Description: Doctors can check or override AI results and add comments. 
+
+All review operations are traced for auditing purposes.
