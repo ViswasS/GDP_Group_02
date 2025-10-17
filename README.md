@@ -541,7 +541,7 @@ Cloud integration may be necessary for heavy processing, but this raises latency
 
 ## Additional Assessment Metrics
 
-* Fairness metrics → Balanced accuracy for diverse skin tones, genders, age ranges.
+* **Fairness metrics** → To ensure that the AI model provides consistent and unbiased results across different user demographics, the system will be evaluated using balanced accuracy across diverse skin tones, genders, and age groups. This involves stratifying the test dataset into these subgroups and verifying that the model’s performance (precision, recall, and F1-score) remains consistent among them. The goal is to minimize demographic bias and confirm that the triage recommendations are equally accurate and reliable for all patient groups.
 
 * Resource usage → Monitor AI models' RAM/CPU usage on-device to illustrate scalability to low-end phones.
 
