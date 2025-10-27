@@ -743,3 +743,22 @@ Email: User's registered email address for authentication.
 Password: Password encrypted to enable secure login.
 
 MFA_Enabled: Multi-Factor Authentication is enabled for the user.
+
+# Home page 
+
+import { Link as RouterLink } from 'react-router-dom'
+import { Box, Button, Typography, Paper } from '@mui/material'
+
+export default function Home() {
+  return (
+    <Paper elevation={2} sx={{ p: 4, mt: 2 }}>
+      <Typography variant="h4" gutterBottom> Welcome to EdgeCare Triage </Typography>
+      <Typography color="text.secondary" sx={{ mb: 3 }}>
+        Upload a rash photo or describe symptoms to receive clear guidance.
+      </Typography>
+      <Box sx={{ display:'flex', gap:2, flexWrap:'wrap' }}>
+        <Button variant="contained" size="large" component={RouterLink} to="/login">Login</Button>
+      </Box>
+    </Paper>
+  )
+}
