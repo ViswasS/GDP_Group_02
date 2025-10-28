@@ -762,3 +762,28 @@ export default function Home() {
     </Paper>
   )
 }
+
+# Nav BAR
+import { Paper, Typography, List, ListItem, ListItemText, Chip } from '@mui/material'
+
+const mockCases = [
+  { id: 'C-2025-001', patient: 'John D.', severity: 'high', rec: 'Seek care' },
+  { id: 'C-2025-002', patient: 'Sara K.', severity: 'moderate', rec: 'Monitor at home' },
+  { id: 'C-2025-003', patient: 'Amit P.', severity: 'low', rec: 'Monitor at home' },
+]
+
+export default function DoctorDashboard() {
+  return (
+    <Paper sx={{ p:2 }}>
+      <Typography variant="h6" sx={{ mb:1 }}>Doctor Portal — Recent Cases (Demo)</Typography>
+      {mockCases.map(c => (
+        <List key={c.id} sx={{ mb:1 }}>
+          <ListItem divider>
+            <ListItemText primary={${c.id} • ${c.patient}} secondary={Recommendation: ${c.rec}} />
+            <Chip color={c.severity==='high'?'error':c.severity==='moderate'?'warning':'success'} label={c.severity.toUpperCase()} />
+          </ListItem>
+        </List>
+      ))}
+    </Paper>
+  )
+}
