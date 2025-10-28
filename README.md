@@ -812,3 +812,40 @@ export default function DoctorDashboard() {
     </Paper>
   )
 }
+# questionare
+
+import { useApp } from '../state/AppContext.jsx'
+import { useNavigate } from 'react-router-dom'
+import { Box, Button, Slider, TextField, FormControlLabel, Switch, MenuItem } from '@mui/material'
+import QuestionCard from '../components/QuestionCard.jsx'
+
+export default function Questionnaire() {
+  const { caseData, setCaseData } = useApp()
+  const nav = useNavigate()
+  const q = caseData.questionnaire
+  const save = (patch) => setCaseData({ ...caseData, questionnaire: { ...q, ...patch }})
+
+  return (
+    <Box sx={{ mt: 1 }}>
+      <QuestionCard title="Itch level (0-10)">
+        <Slider value={q.itch} onChange={(_, v)=>save({ itch: v })} min={0} max={10} step={1} marks />
+      </QuestionCard>
+      <QuestionCard title="Pain level (0-10)">
+        <Slider value={q.pain} onChange={(_, v)=>save({ pain: v })} min={0} max={10} step={1} marks />
+      </QuestionCard>
+      <QuestionCard title="Duration (days)">
+        <TextField type="number" value={q.durationDays} onChange={e=>save({ durationDays: e.target.value })}/>
+      </QuestionCard>
+      
+      <QuestionCard title="Had this previously?">
+        <FormControlLabel control={<Switch checked={q.recurrence} onChange={e=>save({ recurrence: e.target.checked })} />} label={q.recurrence ? 'Yes' : 'No'} />
+      </QuestionCard>
+     
+      <Box sx={{ display:'flex', gap:2, mt: 2 }}>
+        <Button variant="outlined" onClick={()=>nav('/patient')}>Back</Button>
+        <Button variant="contained" onClick={()=>nav('/patient/input')}>Next: Image/Text</Button>
+      </Box>
+    </Box>
+  )
+}
+
