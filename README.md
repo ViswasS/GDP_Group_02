@@ -849,3 +849,12 @@ export default function Questionnaire() {
   )
 }
 
+# Objectives
+
+Develop an AI-assisted system that performs initial patient triage based on symptoms and uploaded medical images.
+
+Implement a React Native mobile app for patients and a React.js web interface for doctors.
+
+Integrate Firebase for real-time communication and data synchronization.
+
+Provide AI-based severity predictions (Low, Moderate, High) for faster decision-making.
