@@ -858,3 +858,39 @@ Implement a React Native mobile app for patients and a React.js web interface fo
 Integrate Firebase for real-time communication and data synchronization.
 
 Provide AI-based severity predictions (Low, Moderate, High) for faster decision-making.
+
+# Results
+
+import { useEffect, useState } from 'react'
+import { useApp } from '../state/AppContext.jsx'
+import { Box, Button } from '@mui/material'
+import { mockInfer } from '../utils/mockAi.js'
+import ResultCard from '../components/ResultCard.jsx'
+import { useNavigate } from 'react-router-dom'
+
+export default function Result() {
+  const { caseData, setCaseData } = useApp()
+  const nav = useNavigate()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLoading(true)
+    const res = mockInfer({ ...caseData.questionnaire, textDesc: caseData.textDesc })
+    const t = setTimeout(() => {
+      setCaseData({ ...caseData, result: res })
+      setLoading(false)
+    }, 800)
+    return () => clearTimeout(t)
+  }, [])
+
+  return (
+    <Box>
+      <ResultCard result={caseData.result || {}} loading={loading} />
+      <Box sx={{ mt: 2, display:'flex', gap:2 }}>
+        <Button variant="outlined" onClick={()=>nav('/patient/input')}>Back</Button>
+        <Button variant="contained" onClick={()=>nav('/patient')}>Finish</Button>
+      </Box>
+    </Box>
+  )
+}
+
