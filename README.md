@@ -894,3 +894,12 @@ export default function Result() {
   )
 }
 
+## Notification
+Notification_ID: A unique identifier for each notification.
+
+User_ID: The user to whom the notification is addressed.
+
+Message: Content of the notification message.
+
+Status: Indicates whether the notification has been sent, delivered, or read.
+
