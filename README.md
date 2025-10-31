@@ -903,3 +903,28 @@ Message: Content of the notification message.
 
 Status: Indicates whether the notification has been sent, delivered, or read.
 
+## Summary of Data to be Stored
+# 1. User
+User_ID: Identifier for each user in the system.
+
+Role: Represents the user's role (Admin_Profile, Doctor_Profile, or Patient_Profile).
+
+Email: User's registered email address for authentication.
+
+Password: Password encrypted to enable secure login.
+
+MFA_Enabled: Multi-Factor Authentication is enabled for the user.
+
+# 2. Admin Profile
+Admin_ID: Identifier for each admin.
+
+Admin_Level: Level or authority of the admin in the system (e.g., Super Admin, Data Admin).
+
+# 3. Doctor Profile
+Doctor_ID: ID for each doctor.
+
+License_Number: Professional license number issued to the doctor.
+
+Specialty: Medical specialty domain (e.g., Dermatology).
+
+Experience: Years of experience.
