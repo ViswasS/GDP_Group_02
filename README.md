@@ -936,3 +936,31 @@ Open a new SQL tab for your connection.
 Create a new database edgecare_triage_db for testing.
 
 Please select this database before running any script.
+
+## utils/mockAi.js
+
+
+<pre>
+export function mockInfer({ itch, pain, durationDays, recurrence, textDesc }) {
+  const severityScore = itch + pain + durationDays + (recurrence ? 2 : 0);
+  let severity = 'low';
+  let recommendation = 'Monitor at home';
+
+  if (severityScore > 20) {
+    severity = 'high';
+    recommendation = 'Seek care';
+  } else if (severityScore > 10) {
+    severity = 'moderate';
+    recommendation = 'Monitor at home';
+  }
+
+  const condition = textDesc?.toLowerCase().includes('red') ? 'Possible dermatitis' : 'Skin irritation';
+
+  return {
+    severity,
+    recommendation,
+    condition,
+    notes: `AI suggests: ${condition}. Recommendation: ${recommendation}.`,
+  };
+}</pre>
+
