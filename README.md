@@ -928,3 +928,11 @@ License_Number: Professional license number issued to the doctor.
 Specialty: Medical specialty domain (e.g., Dermatology).
 
 Experience: Years of experience.
+
+# Creating the Test Database
+
+Open a new SQL tab for your connection.
+
+Create a new database edgecare_triage_db for testing.
+
+Please select this database before running any script.
