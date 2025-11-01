@@ -964,3 +964,16 @@ export function mockInfer({ itch, pain, durationDays, recurrence, textDesc }) {
   };
 }</pre>
 
+# Loading the EdgeCare Triage SQL File
+
+Open the provided SQL dump file, edgecare_triage_db.sql, in MySQL Workbench.
+
+Review the file to ensure it contains:
+
+Table creation statements
+
+Foreign key constraints
+
+Seed/dummy data (Users, Profiles, Cases, Images, Triage Results, Doctor Reviews, Notifications, Sessions, Audit Logs)
+
+Click the lightning bolt icon or Execute to run the entire script.
