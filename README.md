@@ -989,3 +989,33 @@ Click the lightning bolt icon or Execute to run the entire script.
   PRIMARY KEY (`User_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 </pre>
+
+
+# AI service
+a mock AI service that simulates triage results based on questionnaire inputs.
+<pre>
+   export function mockInfer({ itch, pain, durationDays, recurrence, textDesc }) {
+  const severityScore = itch + pain + durationDays + (recurrence ? 2 : 0);
+  let severity = 'low';
+  let recommendation = 'Monitor at home';
+
+  if (severityScore > 20) {
+    severity = 'high';
+    recommendation = 'Seek care';
+  } else if (severityScore > 10) {
+    severity = 'moderate';
+    recommendation = 'Monitor at home';
+  }
+
+  const condition = textDesc?.toLowerCase().includes('red')
+    ? 'Possible dermatitis'
+    : 'Skin irritation';
+
+  return {
+    severity,
+    recommendation,
+    condition,
+    notes: `AI suggests: ${condition}. Recommendation: ${recommendation}.`,
+  };
+}
+</pre>
