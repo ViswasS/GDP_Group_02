@@ -977,3 +977,15 @@ Foreign key constraints
 Seed/dummy data (Users, Profiles, Cases, Images, Triage Results, Doctor Reviews, Notifications, Sessions, Audit Logs)
 
 Click the lightning bolt icon or Execute to run the entire script.
+
+<pre>
+   CREATE TABLE `User` (
+  `User_ID` INT NOT NULL AUTO_INCREMENT,
+  `Role` ENUM('Admin_Profile', 'Doctor_Profile', 'Patient_Profile') NOT NULL,
+  `Email` VARCHAR(255) NOT NULL UNIQUE,
+  `Password` VARCHAR(255) NOT NULL COMMENT 'Stores a hashed and salted password (e.g., bcrypt)',
+  `MFA_Enabled` TINYINT(1) NOT NULL DEFAULT 0,
+  `Created_At` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`User_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+</pre>
