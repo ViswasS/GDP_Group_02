@@ -1019,3 +1019,27 @@ a mock AI service that simulates triage results based on questionnaire inputs.
   };
 }
 </pre>
+
+# Table structure for table Triage_Case
+ 
+<pre>
+CREATE TABLE `Triage_Case` (
+  `Case_ID` INT NOT NULL AUTO_INCREMENT,
+  `Patient_ID` INT NOT NULL,
+  `Questionnaire_ID` INT NOT NULL UNIQUE,
+  `Is_Emergency` TINYINT(1) NOT NULL DEFAULT 0,
+  `Doctor_ID` INT DEFAULT NULL COMMENT 'Assigned doctor',
+  `Status` ENUM('Submitted', 'In_Review', 'Closed') DEFAULT 'Submitted',
+  `Submitted_At` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Case_ID`),
+  CONSTRAINT `fk_case_patient`
+    FOREIGN KEY (`Patient_ID`) REFERENCES `Patient_Profile` (`Patient_ID`)
+    ON DELETE CASCADE, -- If patient is deleted, their cases are deleted
+  CONSTRAINT `fk_case_questionnaire`
+    FOREIGN KEY (`Questionnaire_ID`) REFERENCES `Questionnaire` (`Questionnaire_ID`)
+    ON DELETE CASCADE, -- If questionnaire is deleted, case is deleted
+  CONSTRAINT `fk_case_doctor`
+    FOREIGN KEY (`Doctor_ID`) REFERENCES `Doctor_Profile` (`Doctor_ID`)
+    ON DELETE SET NULL -- If doctor is deleted, case becomes unassigned
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   </pre>
