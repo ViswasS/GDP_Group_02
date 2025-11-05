@@ -1050,3 +1050,17 @@ The EdgeCare Triage Seed Data setup is designed to create a test database called
 You'll find entities like Users, Profiles (Admin, Doctor, Patient), Questionnaires, Triage Cases, Images, Results, Reviews, Notifications, Sessions, and Audit Logs, all interconnected through the appropriate foreign keys.
 
 Once you've loaded the SQL file, you can run SELECT queries to check that the users, cases, and their relationships have been loaded correctly
+
+<pre>
+   CREATE TABLE `Triage_Result` (
+  `Result_ID` INT NOT NULL AUTO_INCREMENT,
+  `Case_ID` INT NOT NULL UNIQUE,
+  `Recommendation` TEXT NOT NULL COMMENT 'AI-suggested advice',
+  `Confidence_Score` DECIMAL(5, 4) DEFAULT NULL,
+  `Generated_At` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Result_ID`),
+  CONSTRAINT `fk_result_case`
+    FOREIGN KEY (`Case_ID`) REFERENCES `Triage_Case` (`Case_ID`)
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+</pre>
