@@ -1044,7 +1044,7 @@ CREATE TABLE `Triage_Case` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
    </pre>
 
-# Overview of EdgeCare Triage
+# Overview of Seed Data
 The EdgeCare Triage Seed Data setup is designed to create a test database called edgecare_triage_db in MySQL Workbench. This setup includes all the necessary tables, foreign keys, and some dummy data to get you started.
 
 You'll find entities like Users, Profiles (Admin, Doctor, Patient), Questionnaires, Triage Cases, Images, Results, Reviews, Notifications, Sessions, and Audit Logs, all interconnected through the appropriate foreign keys.
