@@ -1034,12 +1034,19 @@ CREATE TABLE `Triage_Case` (
   PRIMARY KEY (`Case_ID`),
   CONSTRAINT `fk_case_patient`
     FOREIGN KEY (`Patient_ID`) REFERENCES `Patient_Profile` (`Patient_ID`)
-    ON DELETE CASCADE, -- If patient is deleted, their cases are deleted
+    ON DELETE CASCADE, -- If a patient is deleted, their cases are deleted
   CONSTRAINT `fk_case_questionnaire`
     FOREIGN KEY (`Questionnaire_ID`) REFERENCES `Questionnaire` (`Questionnaire_ID`)
-    ON DELETE CASCADE, -- If questionnaire is deleted, case is deleted
+    ON DELETE CASCADE, -- If the questionnaire is deleted, the case is deleted
   CONSTRAINT `fk_case_doctor`
     FOREIGN KEY (`Doctor_ID`) REFERENCES `Doctor_Profile` (`Doctor_ID`)
-    ON DELETE SET NULL -- If doctor is deleted, case becomes unassigned
+    ON DELETE SET NULL -- If the doctor is deleted, the case becomes unassigned
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
    </pre>
+
+# Overview of EdgeCare Triage
+The EdgeCare Triage Seed Data setup is designed to create a test database called edgecare_triage_db in MySQL Workbench. This setup includes all the necessary tables, foreign keys, and some dummy data to get you started.
+
+You'll find entities like Users, Profiles (Admin, Doctor, Patient), Questionnaires, Triage Cases, Images, Results, Reviews, Notifications, Sessions, and Audit Logs, all interconnected through the appropriate foreign keys.
+
+Once you've loaded the SQL file, you can run SELECT queries to check that the users, cases, and their relationships have been loaded correctly
