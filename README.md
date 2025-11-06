@@ -1064,3 +1064,9 @@ Once you've loaded the SQL file, you can run SELECT queries to check that the us
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 </pre>
+
+## Fragmented Technology Ecosystem
+Healthcare institutions use multiple digital systems that often fail to communicate with each other.
+Pre-screening results are rarely integrated into hospital databases or electronic health record (EHR) systems.
+Due to this fragmentation, doctors cannot easily view prior assessments or patient histories during appointments.
+This disconnect between technology layers leads to redundant work, slower decision-making, and poor coordination among staff.
