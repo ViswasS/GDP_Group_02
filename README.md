@@ -1020,6 +1020,21 @@ a mock AI service that simulates triage results based on questionnaire inputs.
 }
 </pre>
 
+We use a mock AI service to simulate triage results based on questionnaire inputs. This helps test the result screen and doctor portal override logic before integrating the actual model.
+
+<pre>
+import { mockInfer } from './utils/mockAi';
+
+const result = mockInfer({
+  itch: 5,
+  pain: 3,
+  durationDays: 2,
+  recurrence: true,
+  textDesc: 'Red itchy patch',
+});
+</pre>
+
+
 # Table structure for table Triage_Case
  
 <pre>
