@@ -1105,3 +1105,12 @@ This disconnect between technology layers leads to redundant work, slower decisi
 **Demo Evidence:**
 
 * **Screen recording:** fill form → save → refresh → fields restored.
+
+**Ineffective Patient Prioritization**
+Current patient intake systems lack a structured process to classify cases based on urgency.
+
+Non-critical cases often consume resources before more serious ones are attended to.
+
+There is no automated triage mechanism to assess and prioritize cases efficiently.
+
+This results in overcrowding, slower response times, and delayed critical care.
