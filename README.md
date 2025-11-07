@@ -1085,3 +1085,23 @@ Healthcare institutions use multiple digital systems that often fail to communic
 Pre-screening results are rarely integrated into hospital databases or electronic health record (EHR) systems.
 Due to this fragmentation, doctors cannot easily view prior assessments or patient histories during appointments.
 This disconnect between technology layers leads to redundant work, slower decision-making, and poor coordination among staff.
+
+## 1) Symptom Input Prototype (Mobile/Web)
+
+**Scope:**
+
+* **Questionnaire with fields:** durationDays (number), pain (0–10), itch (0–10), recurrence (yes/no), free-text description.
+
+* Client-side validation; values stored in app state and persisted to a local stub.
+
+**Acceptance Criteria:**
+
+* User can fill out and save the form without any errors.
+
+* Data persists across a page refresh/app relaunch (local stub).
+
+* Visible JSON/log proof of saved structure.
+
+**Demo Evidence:**
+
+* **Screen recording:** fill form → save → refresh → fields restored.
