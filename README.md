@@ -1122,3 +1122,9 @@ This results in overcrowding, slower response times, and delayed critical care.
 - Developed patient-side questionnaire and image upload interface.
 - Built doctor portal prototype with override functionality and case listing.
 - Structured database schema with triage case, image, and audit log tables.
+
+## Provide Personalized Health Reports:
+The system SHOULD display structured triage reports that summarize AI analysis results, doctor feedback, and follow-up recommendations in a clear and organized format.
+
+## Enable Selective Data Exports:
+The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
