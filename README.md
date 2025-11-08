@@ -1114,3 +1114,11 @@ Non-critical cases often consume resources before more serious ones are attended
 There is no automated triage mechanism to assess and prioritize cases efficiently.
 
 This results in overcrowding, slower response times, and delayed critical care.
+
+## 🚀 Recent Progress (as of Nov 7)
+
+- Completed Iteration 3 of Functional Requirements.
+- Implemented mock AI triage logic using `mockInfer()` for severity scoring.
+- Developed patient-side questionnaire and image upload interface.
+- Built doctor portal prototype with override functionality and case listing.
+- Structured database schema with triage case, image, and audit log tables.
