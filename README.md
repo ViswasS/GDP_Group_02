@@ -278,35 +278,34 @@ Patient Update: Patient gets push notification with treatment notes & follow-up 
 
 * Improved patient confidence and awareness.
 
-# Functional Requirements
+## Functional Requirements – Iteration 3
 
-**The system SHALL:**
+### The system SHALL:
+1. Allow patients to upload images and answer symptom questionnaires.
+2. Perform on-device AI analysis and return triage results within 10 seconds.
+3. Display triage results clearly with severity levels and recommendations.
+4. Allow doctors to override AI results and add notes.
+5. Notify patients when doctors update their reports.
+6. Authenticate users securely and enforce role-based access.
+7. Store triage reports and logs securely with encryption.
+8. Maintain an immutable audit log of doctor overrides and patient submissions.
+9. Enforce HIPAA/GDPR-compliant data handling.
+10. SHALL NOT store passwords in plain text.
 
-The system SHALL allow patients to answer symptom questions through a web or mobile interface.
+### The system SHOULD:
+- Accept JPG/PNG images.
+- Detect blurry images and prompt retake.
+- Support multilingual questionnaires.
+- Allow offline symptom analysis with sync on reconnect.
+- Enable doctors to download reports in PDF.
+- Provide accessibility features (voice input, large text).
 
-The system SHALL allow patients to upload or photograph their rash or affected area.
+### The system MAY:
+- Recommend OTC medications or lifestyle changes.
+- Export triage history in CSV.
+- Integrate with wearables for vitals.
+- Show AI confidence scores.
 
-The system SHALL conduct an AI model to classify the image and generate a triage result within 10 seconds.
-
-The system SHALL display the triage result clearly to the patient (e.g., "Seek care", "Monitor at home").
-
-**The system SHOULD:**
-
-The system SHOULD accept standard format images (JPG, PNG), permit questionnaires in multiple languages, and provide accessibility options such as voice input and large text size.
-
-The system SHOULD detect blurry or blurred by mistake images and notify patients early to retake if necessary.
-
-The system SHOULD make symptom analysis offline possible using device-based AI, with the reports and updates being automatically synchronized when online.
-
-**The system MAY**
-
-The system MAY recommend future actions such as scheduling a doctor's visit, OTC medication use, or lifestyle changes.
-
-The system MAY provide export of records by generating and exporting triage history in PDF/CSV format for hospitals or patients.
-
-The system MAY incorporate wearable devices to sync vital signs, including heart rate, temperature, and activity data from smartwatches or fitness trackers.
-
-The system MAY enhance condition coverage to include other medical conditions beyond rashes (e.g., respiratory illness, fever, cough) in future versions.
 
 **Robustness, evaluation and validation**
 
