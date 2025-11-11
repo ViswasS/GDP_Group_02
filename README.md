@@ -1147,3 +1147,9 @@ Non-critical cases often consume resources before more serious ones are attended
 There is no automated triage mechanism to efficiently assess and prioritize cases.
 
 This results in overcrowding, slower response times, and delayed critical care.
+
+# Enable Selective Data Exports:
+The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
+
+Support Regional Skin Condition Customization:
+The system SHOULD allow customization of rash-related questionnaires and diagnostic parameters based on regional environmental factors (e.g., humidity, temperature, common local allergens) that may influence skin conditions.
