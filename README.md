@@ -1136,5 +1136,14 @@ The system SHOULD present a structured symptom input form that captures key pati
 * **Provide Personalized Health Reports:**
 The system SHOULD display structured triage reports that summarize AI analysis results, doctor feedback, and follow-up recommendations in a clear and organized format.
 
-* **Enable Selective Data Exports:**
-The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
+**Enable Selective Data Exports:**
+The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, or just a few recent queries.
+
+# Ineffective Patient Prioritization
+Current patient intake systems lack a structured process to classify cases based on urgency.
+
+Non-critical cases often consume resources before more serious ones are attended to.
+
+There is no automated triage mechanism to efficiently assess and prioritize cases.
+
+This results in overcrowding, slower response times, and delayed critical care.
