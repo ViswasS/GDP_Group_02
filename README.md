@@ -1163,3 +1163,9 @@ The system SHOULD display structured triage reports that summarize AI analysis r
 
 * **Enable Selective Data Exports:**
 The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
+
+### Offer Predictive Health Analysis:
+The system MAY leverage predictive analytics to identify recurring patterns of abnormal health behavior that may indicate chronic conditions.
+
+### Support Family or Guardian Accounts:
+The system MAY provide multi-patient family accounts, allowing guardians to manage and monitor dependents such as children or elderly family members.
