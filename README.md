@@ -1153,3 +1153,13 @@ The system SHOULD allow patients to export specific data segments, for example, 
 
 Support Regional Skin Condition Customization:
 The system SHOULD allow customization of rash-related questionnaires and diagnostic parameters based on regional environmental factors (e.g., humidity, temperature, common local allergens) that may influence skin conditions.
+
+## The System SHOULD:
+* **Adapt Questionnaires Dynamically:**
+The system SHOULD present a structured symptom input form that captures key patient details such as duration, severity, and additional notes. Future versions MAY introduce conditional follow-up questions based on patient responses to improve diagnostic accuracy.
+
+* **Provide Personalized Health Reports:**
+The system SHOULD display structured triage reports that summarize AI analysis results, doctor feedback, and follow-up recommendations in a clear and organized format.
+
+* **Enable Selective Data Exports:**
+The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
