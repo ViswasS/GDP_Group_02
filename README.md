@@ -940,27 +940,46 @@ Please select this database before running any script.
 
 
 <pre>
-export function mockInfer({ itch, pain, durationDays, recurrence, textDesc }) {
-  const severityScore = itch + pain + durationDays + (recurrence ? 2 : 0);
-  let severity = 'low';
-  let recommendation = 'Monitor at home';
+// mockAi.js
+// Simple mock AI inference logic for triage scoring
 
-  if (severityScore > 20) {
-    severity = 'high';
-    recommendation = 'Seek care';
-  } else if (severityScore > 10) {
-    severity = 'moderate';
-    recommendation = 'Monitor at home';
-  }
+/**
+ * Simulates AI triage analysis based on patient symptoms and image metadata.
+ * Returns severity level and confidence score.
+ */
+export function mockInfer(symptoms, imageQuality = 1.0) {
+  let score = 0;
 
-  const condition = textDesc?.toLowerCase().includes('red') ? 'Possible dermatitis' : 'Skin irritation';
+  // Basic scoring based on symptoms
+  if (symptoms.includes("fever")) score += 2;
+  if (symptoms.includes("cough")) score += 2;
+  if (symptoms.includes("chest pain")) score += 4;
+  if (symptoms.includes("shortness of breath")) score += 5;
+
+  // Adjust score based on image quality (0–1 scale)
+  score = score * imageQuality;
+
+  // Determine severity
+  let severity = "Low";
+  if (score >= 3 && score < 6) severity = "Medium";
+  else if (score >= 6) severity = "High";
+
+  // Confidence is inversely related to image quality issues
+  const confidence = Math.min(1.0, 0.7 + imageQuality * 0.3);
 
   return {
     severity,
-    recommendation,
-    condition,
-    notes: `AI suggests: ${condition}. Recommendation: ${recommendation}.`,
+    confidence: Number(confidence.toFixed(2)),
+    score,
+    timestamp: new Date().toISOString()
   };
+}
+
+// Example usage:
+// const result = mockInfer(["fever", "cough"], 0.8);
+// console.log(result);
+// -> { severity: "Medium", confidence: 0.94, score: 3.2, timestamp: "..." }
+
 }</pre>
 
 # Loading the EdgeCare Triage SQL File
