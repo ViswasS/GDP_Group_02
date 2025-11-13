@@ -1169,3 +1169,9 @@ The system MAY leverage predictive analytics to identify recurring patterns of a
 
 ### Support Family or Guardian Accounts:
 The system MAY provide multi-patient family accounts, allowing guardians to manage and monitor dependents such as children or elderly family members.
+
+# Provide Personalized Health Reports:
+The system SHOULD display structured triage reports that summarize AI analysis results, doctor feedback, and follow-up recommendations in a clear and organized format.
+
+Enable Selective Data Exports:
+The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
