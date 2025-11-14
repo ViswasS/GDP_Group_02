@@ -1194,3 +1194,11 @@ The system SHOULD display structured triage reports that summarize AI analysis r
 
 Enable Selective Data Exports:
 The system SHOULD allow patients to export specific data segments, for example, only the previous month’s results or AI-generated versus doctor-approved reports, rather than a complete backup, just a few recent queries.
+
+## The System MAY:
+* **Integrate with Pharmacy Systems:**
+The system MAY interoperate with pharmacy platforms to enable patients to directly order doctor-prescribed medication.
+
+* **Include AI-Powered Chatbots:**
+The system MAY employ AI-driven chatbots as an initial triage support layer to guide patients before a full doctor review.
+
