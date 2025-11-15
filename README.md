@@ -1202,16 +1202,18 @@ The system MAY interoperate with pharmacy platforms to enable patients to direct
 * **Include AI-Powered Chatbots:**
 The system MAY employ AI-driven chatbots as an initial triage support layer to guide patients before a full doctor review.
 
-* **The System MAY:**
-Integrate with Pharmacy Systems:
-The system MAY interoperate with pharmacy platforms to enable patients to directly order doctor-prescribed medication.
-
-* **Include AI-Powered Chatbots:**
-The system MAY employ AI-driven chatbots as an initial triage support layer to guide patients before a full doctor review.
 
 * **Offer Predictive Health Analysis:**
 The system MAY leverage predictive analytics to identify recurring patterns of abnormal health behavior that may indicate chronic conditions.
 
 * **Support Family or Guardian Accounts:**
 The system MAY provide multi-patient family accounts, allowing guardians to manage and monitor dependents such as children or elderly family members.
+
+* **Acceptance Criteria:**
+
+At least 3 demo cases render consistently.
+
+Clicking a case opens a detail pane where data is mapped correctly.
+
+Override action updates case status/recommendation.
 
