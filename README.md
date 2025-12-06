@@ -2,7 +2,7 @@
 Graduate Direct Project - 1, Group_02
 
 # Team Members
-Himaja,
+Himaja Kaishetty,
 Tharun,
 Viswas,
 Vamshi Krishna.
@@ -117,7 +117,7 @@ Goal: ≤ 10 seconds as per user story acceptance criteria.
 
 **Accuracy & Accessibility:**
 The app will be enhanced to provide more accurate, accessible, and reliable support for skin and rash-related conditions. 
-Multi-language support will allow patients from diverse backgrounds to use the app with ease.
+Multi-language support will allow patients from diverse backgrounds to use the app with ease..
 
 **Improved AI Engine:**
 The AI engine will be further trained to detect a wider range of skin problems, improving accuracy and offering more detailed triage results.
