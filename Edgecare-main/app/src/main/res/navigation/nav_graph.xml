@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.edgecare.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_caseDetail"
+            app:destination="@id/caseDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_createCaseFragment"
+            app:destination="@id/createCaseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chats"
+        android:name="com.edgecare.ChatsFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chats">
+        <action
+            android:id="@+id/action_chats_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.edgecare.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.edgecare.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/caseDetailFragment"
+        android:name="com.edgecare.ui.cases.CaseDetailFragment"
+        android:label="Case Details"
+        tools:layout="@layout/fragment_case_detail">
+        <argument
+            android:name="caseId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_caseDetailFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_caseDetailFragment_to_caseReportFragment"
+            app:destination="@id/caseReportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/caseReportFragment"
+        android:name="com.edgecare.ui.cases.CaseReportFragment"
+        android:label="Case Report"
+        tools:layout="@layout/fragment_case_report">
+        <argument
+            android:name="caseId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.edgecare.ui.chat.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="caseId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createCaseFragment"
+        android:name="com.edgecare.ui.cases.CreateCaseFragment"
+        android:label="Create Case"
+        tools:layout="@layout/fragment_create_case" />
+
+</navigation>

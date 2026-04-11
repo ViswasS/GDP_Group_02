@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.EdgeCare.Display" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.EdgeCare.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.EdgeCare.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="TextAppearance.EdgeCare.BodyMuted" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="TextAppearance.EdgeCare.Label" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.EdgeCare.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/edgecare_card_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.SurfacePanel" parent="">
+        <item name="android:background">@drawable/bg_surface_card</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.AiPanel" parent="">
+        <item name="android:background">@drawable/bg_ai_section</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.EmergencyPanel" parent="">
+        <item name="android:background">@drawable/bg_emergency_panel</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.EdgeCare.Button</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="iconTint">?attr/colorOnPrimary</item>
+        <item name="android:minHeight">56dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.Button.Secondary" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.EdgeCare.Button</item>
+        <item name="backgroundTint">@color/md_theme_secondaryContainer</item>
+        <item name="android:textColor">@color/md_theme_onSecondaryContainer</item>
+        <item name="iconTint">@color/md_theme_onSecondaryContainer</item>
+        <item name="android:minHeight">56dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.EdgeCare.Button</item>
+        <item name="strokeColor">@color/edgecare_card_stroke</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconTint">?attr/colorOnSurface</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.Button.Call" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.EdgeCare.Button</item>
+        <item name="backgroundTint">@color/md_theme_error</item>
+        <item name="android:textColor">@color/md_theme_onError</item>
+        <item name="iconTint">@color/md_theme_onError</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+
+    <style name="Widget.EdgeCare.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/edgecare_top_bar_surface</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
+        <item name="subtitleTextColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.EdgeCare.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/md_theme_surface</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxStrokeColor">@color/edgecare_card_stroke</item>
+        <item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="EdgeCare.Badge" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingHorizontal">12dp</item>
+        <item name="android:paddingVertical">4dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="EdgeCare.Badge.Success" parent="EdgeCare.Badge">
+        <item name="android:background">@drawable/bg_badge_success</item>
+        <item name="android:textColor">@color/md_theme_success</item>
+    </style>
+
+    <style name="EdgeCare.Badge.Warning" parent="EdgeCare.Badge">
+        <item name="android:background">@drawable/bg_badge_warning</item>
+        <item name="android:textColor">@color/md_theme_warning</item>
+    </style>
+
+    <style name="EdgeCare.Badge.Danger" parent="EdgeCare.Badge">
+        <item name="android:background">@drawable/bg_badge_danger</item>
+        <item name="android:textColor">@color/md_theme_error</item>
+    </style>
+
+    <style name="Widget.Material3.Chip.Choice" parent="Widget.Material3.Chip.Filter" />
+
+</resources>

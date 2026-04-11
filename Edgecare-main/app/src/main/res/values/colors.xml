@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="md_theme_primary">#2563EB</color>
+    <color name="md_theme_primary_600">#1D4ED8</color>
+    <color name="md_theme_primary_700">#1E40AF</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+
+    <color name="md_theme_secondary">#DCEBFF</color>
+    <color name="md_theme_onSecondary">#1741A6</color>
+    <color name="md_theme_secondaryContainer">#EAF2FF</color>
+    <color name="md_theme_onSecondaryContainer">#1D4ED8</color>
+
+    <color name="md_theme_background">#F8FAFC</color>
+    <color name="md_theme_surface">#FFFFFF</color>
+    <color name="md_theme_surfaceVariant">#EFF5FF</color>
+    <color name="md_theme_surfaceContainer">#F3F8FF</color>
+    <color name="md_theme_outline">#D6E1F2</color>
+
+    <color name="md_theme_onSurface">#10233F</color>
+    <color name="md_theme_onSurfaceVariant">#5A6B85</color>
+
+    <color name="md_theme_error">#D14343</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_errorContainer">#FFF1F1</color>
+    <color name="md_theme_onErrorContainer">#8F2222</color>
+
+    <color name="md_theme_warning">#D97706</color>
+    <color name="md_theme_onWarning">#FFFFFF</color>
+
+    <color name="md_theme_success">#1F8A5B</color>
+    <color name="md_theme_onSuccess">#FFFFFF</color>
+
+    <color name="badge_success_bg">#1A1F8A5B</color>
+    <color name="badge_warning_bg">#1FD97706</color>
+    <color name="badge_danger_bg">#1AD14343</color>
+
+    <color name="edgecare_card_stroke">#D8E3F2</color>
+    <color name="edgecare_card_shadow">#122563EB</color>
+    <color name="edgecare_ai_surface">#EEF4FF</color>
+    <color name="edgecare_ai_stroke">#C8D9FF</color>
+    <color name="edgecare_emergency_surface">#FFF4F4</color>
+    <color name="edgecare_emergency_stroke">#F3CACA</color>
+    <color name="edgecare_call_surface">#FFE9E9</color>
+    <color name="edgecare_top_bar_surface">#F8FAFC</color>
+    <color name="edgecare_bottom_nav_surface">#FFFFFF</color>
+
+    <color name="divider">#D6E1F2</color>
+    <color name="primary_accent">#2563EB</color>
+    <color name="text_secondary">#5A6B85</color>
+
+    <color name="notice_success">#1F8A5B</color>
+    <color name="notice_error">#D14343</color>
+    <color name="notice_info">#2563EB</color>
+
+    <color name="status_in_review_text">#D97706</color>
+    <color name="status_in_review_bg">#1FD97706</color>
+    <color name="status_closed_text">#1F8A5B</color>
+    <color name="status_closed_bg">#1A1F8A5B</color>
+    <color name="status_emergency_text">#D14343</color>
+    <color name="status_emergency_bg">#1AD14343</color>
+</resources>

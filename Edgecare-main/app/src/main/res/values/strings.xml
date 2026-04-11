@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EdgeCare-Triage</string>
+    <string name="welcome">Welcome to EdgeCare</string>
+    <string name="sign_in_to_continue">Please sign in to continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="need_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="case_format">Case #%1$d</string>
+    <string name="chat_title_format">Case #%1$d • %2$s</string>
+    <string name="waiting_for_doctor">Waiting for Doctor</string>
+    <string name="type_a_message">Type a message…</string>
+    <string name="send">Send</string>
+    <string name="no_cases_yet">No cases yet.\nCreate a case to start chatting.</string>
+</resources>

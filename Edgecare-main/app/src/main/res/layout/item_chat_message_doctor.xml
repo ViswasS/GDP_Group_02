@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="4dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivDoctorAvatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="2dp"
+        android:background="?attr/colorSurfaceVariant"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_doctor_placeholder"
+        app:layout_constraintBottom_toBottomOf="@+id/bubble_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.EdgeCare.Small"
+        app:tint="?attr/colorOnSurfaceVariant" />
+
+    <LinearLayout
+        android:id="@+id/bubble_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_bubble_doctor"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintStart_toEndOf="@+id/ivDoctorAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintWidth_max="280dp">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="16sp"
+            tools:text="Please show me the other arm as well." />
+
+        <TextView
+            android:id="@+id/tvTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"
+            android:alpha="0.6"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="11sp"
+            tools:text="10:46 AM" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
