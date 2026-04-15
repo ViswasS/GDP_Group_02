@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare - Admin Dashboard</title>
+
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/toast.css" />
+  <style>
+    .admin-shell{display:flex;flex-direction:column;gap:24px;}
+    .admin-hero{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:28px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(20,184,166,0.08) 55%,rgba(255,255,255,0.96));box-shadow:0 20px 44px rgba(15,23,42,0.08);}
+    .admin-hero__copy{max-width:720px;}
+    .admin-hero__title{margin:8px 0 10px;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.05;letter-spacing:-0.04em;color:var(--text);}
+    .admin-hero__text{margin:0;color:var(--muted);line-height:1.7;font-size:15px;}
+    .admin-hero__actions{display:flex;flex-wrap:wrap;gap:10px;}
+    .admin-chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .admin-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(37,99,235,0.14);background:rgba(255,255,255,0.72);font-size:12px;font-weight:700;color:var(--ec-primary-deep);}
+    .admin-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px;}
+    .admin-panel{border:1px solid var(--border);border-radius:24px;background:rgba(255,255,255,0.96);box-shadow:0 16px 36px rgba(15,23,42,0.06);padding:24px;}
+    .admin-panel--span-12{grid-column:span 12;}
+    .admin-panel--span-7{grid-column:span 7;}
+    .admin-panel--span-5{grid-column:span 5;}
+    .admin-panel--span-6{grid-column:span 6;}
+    .admin-panel__head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px;}
+    .admin-panel__eyebrow{display:block;margin-bottom:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ec-primary-deep);}
+    .admin-panel__title{margin:0;font-size:20px;letter-spacing:-.02em;color:var(--text);}
+    .admin-panel__text{margin:6px 0 0;color:var(--muted);line-height:1.6;font-size:14px;}
+    .admin-status{color:var(--muted);font-size:13px;}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+    .kpi-card{padding:18px;border-radius:20px;border:1px solid rgba(37,99,235,0.1);background:linear-gradient(180deg,rgba(248,251,255,0.98),rgba(255,255,255,0.98));box-shadow:0 12px 24px rgba(15,23,42,0.04);}
+    .kpi-card__label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+    .kpi-card__value{display:block;margin-top:10px;font-size:32px;font-weight:800;letter-spacing:-.04em;color:var(--text);}
+    .kpi-card__meta{display:block;margin-top:8px;color:var(--muted);font-size:13px;}
+    .workflow-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px;}
+    .workflow-item{padding:14px 16px;border-radius:18px;background:rgba(248,251,255,0.96);border:1px solid rgba(37,99,235,0.1);}
+    .workflow-item strong{display:block;font-size:22px;letter-spacing:-.03em;color:var(--text);}
+    .workflow-item span{display:block;margin-top:6px;color:var(--muted);font-size:13px;}
+    .breakdown-list{display:flex;flex-direction:column;gap:12px;}
+    .breakdown-item{display:flex;flex-direction:column;gap:8px;}
+    .breakdown-item__meta{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--text);}
+    .breakdown-track{height:10px;border-radius:999px;background:rgba(226,232,240,0.7);overflow:hidden;}
+    .breakdown-fill{height:100%;border-radius:999px;background:linear-gradient(135deg,var(--ec-primary),var(--ec-accent));}
+    .insight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+    .insight-card{padding:16px;border-radius:18px;border:1px solid rgba(20,184,166,0.12);background:linear-gradient(180deg,rgba(240,253,250,0.88),rgba(255,255,255,0.96));}
+    .insight-card__label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;}
+    .insight-card__value{display:block;margin-top:10px;font-size:28px;font-weight:800;letter-spacing:-.04em;color:var(--text);}
+    .insight-card__meta{display:block;margin-top:8px;font-size:13px;color:var(--muted);}
+    .admin-table-wrap{overflow:auto;}
+    .admin-table{width:100%;border-collapse:collapse;}
+    .admin-table th,.admin-table td{padding:14px 12px;border-bottom:1px solid rgba(226,232,240,0.88);text-align:left;vertical-align:top;}
+    .admin-table th{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+    .admin-table tbody tr:hover{background:rgba(248,251,255,0.88);}
+    .metric-stack{display:flex;flex-direction:column;gap:4px;}
+    .metric-stack strong{color:var(--text);}
+    .metric-stack span{font-size:12px;color:var(--muted);}
+    .recent-list{display:flex;flex-direction:column;gap:12px;}
+    .recent-case{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px;border-radius:18px;border:1px solid rgba(226,232,240,0.88);background:rgba(248,251,255,0.72);}
+    .recent-case--urgent{border-color:rgba(239,68,68,0.18);background:linear-gradient(180deg,rgba(255,250,250,0.98),rgba(248,251,255,0.78));}
+    .recent-case__title{margin:0;font-size:16px;color:var(--text);}
+    .recent-case__meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;color:var(--muted);font-size:13px;}
+    .recent-case__right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+    .badge-cluster{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+    .badge-soft{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid rgba(37,99,235,0.12);background:rgba(248,251,255,0.96);font-size:12px;font-weight:700;color:var(--ec-primary-deep);}
+    .empty-state{padding:18px;border-radius:18px;border:1px dashed rgba(148,163,184,0.46);background:rgba(248,251,255,0.62);color:var(--muted);}
+    @media (max-width: 1080px){
+      .admin-panel--span-7,.admin-panel--span-5,.admin-panel--span-6{grid-column:span 12;}
+      .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media (max-width: 780px){
+      .admin-hero{flex-direction:column;}
+      .kpi-grid,.workflow-grid,.insight-grid{grid-template-columns:1fr;}
+      .recent-case{flex-direction:column;}
+      .recent-case__right{align-items:flex-start;}
+      .badge-cluster{justify-content:flex-start;}
+    }
+  </style>
+</head>
+<body class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/admin/dashboard.html" aria-label="EdgeCare admin dashboard">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Admin Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">Admin Dashboard</div>
+    </div>
+    <div class="topbar-right">
+      <div class="nav-links">
+        <a class="nav-link nav-link--active" href="/admin/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/admin/insights.html">Case Queue</a>
+        <a class="nav-link" href="/admin/ai-console.html">AI Console</a>
+      </div>
+      <span id="meLabel" class="user-chip muted"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="admin-shell">
+      <section class="admin-hero">
+        <div class="admin-hero__copy">
+          <div class="eyebrow">Platform Overview</div>
+          <h1 class="admin-hero__title">Operational insight into patients, doctors, and the AI-first case flow.</h1>
+          <p class="admin-hero__text">
+            Track workload, urgent demand, AI-first screening volume, and recent case movement in one place. This dashboard is designed for quick operational scanning during demos and day-to-day oversight.
+          </p>
+          <div class="admin-chip-row" id="heroChips"></div>
+        </div>
+        <div class="admin-hero__actions">
+          <button id="refreshBtn" class="btn primary">Refresh dashboard</button>
+          <a class="btn" href="/admin/insights.html">Open case queue</a>
+        </div>
+      </section>
+
+      <section class="admin-panel admin-panel--span-12">
+        <div class="admin-panel__head">
+          <div>
+            <span class="admin-panel__eyebrow">Core Metrics</span>
+            <h2 class="admin-panel__title">Admin KPI Snapshot</h2>
+            <p class="admin-panel__text">Supply, demand, case state, and urgent operational load across the platform.</p>
+          </div>
+          <div id="dashboardStatus" class="admin-status">Loading dashboard data...</div>
+        </div>
+        <div id="kpiGrid" class="kpi-grid"></div>
+      </section>
+
+      <div class="admin-grid">
+        <section class="admin-panel admin-panel--span-7">
+          <div class="admin-panel__head">
+            <div>
+              <span class="admin-panel__eyebrow">Workflow</span>
+              <h2 class="admin-panel__title">Case Status Breakdown</h2>
+              <p class="admin-panel__text">How cases are moving through the AI-first lifecycle and doctor review stages.</p>
+            </div>
+          </div>
+          <div id="statusBreakdown" class="breakdown-list"></div>
+          <div id="workflowGrid" class="workflow-grid"></div>
+        </section>
+
+        <section class="admin-panel admin-panel--span-5">
+          <div class="admin-panel__head">
+            <div>
+              <span class="admin-panel__eyebrow">AI Workflow</span>
+              <h2 class="admin-panel__title">Triage Insights</h2>
+              <p class="admin-panel__text">Signals from image quality, uncertain AI output, doctor escalation, and re-upload behavior.</p>
+            </div>
+          </div>
+          <div id="triageInsights" class="insight-grid"></div>
+        </section>
+
+        <section class="admin-panel admin-panel--span-7">
+          <div class="admin-panel__head">
+            <div>
+              <span class="admin-panel__eyebrow">Doctor Operations</span>
+              <h2 class="admin-panel__title">Doctor Workload</h2>
+              <p class="admin-panel__text">Assigned volume, urgent load, and completed review activity per doctor.</p>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Doctor</th>
+                  <th>Active Assigned</th>
+                  <th>Urgent Assigned</th>
+                  <th>Reviewed</th>
+                  <th>Closed</th>
+                </tr>
+              </thead>
+              <tbody id="doctorWorkloadBody"></tbody>
+            </table>
+          </div>
+          <div id="doctorWorkloadEmpty" class="empty-state" style="display:none;">No doctor workload data is available yet.</div>
+        </section>
+
+        <section class="admin-panel admin-panel--span-5">
+          <div class="admin-panel__head">
+            <div>
+              <span class="admin-panel__eyebrow">Queue Preview</span>
+              <h2 class="admin-panel__title">AI Support Active Queue</h2>
+              <p class="admin-panel__text">Latest submitted cases still waiting in the AI Support Active, unassigned state.</p>
+            </div>
+            <a class="btn" href="/admin/insights.html">Manage queue</a>
+          </div>
+          <div id="queuePreview" class="recent-list"></div>
+        </section>
+
+        <section class="admin-panel admin-panel--span-12">
+          <div class="admin-panel__head">
+            <div>
+              <span class="admin-panel__eyebrow">Recent Activity</span>
+              <h2 class="admin-panel__title">Recent Cases</h2>
+              <p class="admin-panel__text">Latest case submissions with patient, urgency, assigned doctor, and care-level context.</p>
+            </div>
+          </div>
+          <div id="recentCases" class="recent-list"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/admin/js/api.js"></script>
+  <script src="/admin/js/dashboard.js"></script>
+</body>
+</html>

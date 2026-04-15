@@ -1,0 +1,2 @@
+ALTER TABLE `Triage_Case`
+  ADD COLUMN `ML_Last_Error` TEXT NULL;

@@ -1,0 +1,76 @@
+:root{
+  /* EdgeCare brand palette */
+  --ec-primary: #2563eb;
+  --ec-primary-soft: #3b82f6;
+  --ec-primary-deep: #1d4ed8;
+  --ec-accent: #14b8a6;
+  --ec-accent-soft: #22d3ee;
+  --ec-gradient: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+  --ec-gradient-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(20, 184, 166, 0.1));
+  --ec-bg: #f8fafc;
+  --ec-bg-soft: #f1f5f9;
+  --ec-card: #ffffff;
+  --ec-card-soft: #f8fbff;
+  --ec-border: #e2e8f0;
+  --ec-border-strong: #cbd5e1;
+  --ec-text: #0f172a;
+  --ec-muted: #64748b;
+  --ec-success: #16a34a;
+  --ec-warning: #f59e0b;
+  --ec-danger: #ef4444;
+
+  /* Aliases used by the existing codebase */
+  --bg: var(--ec-bg);
+  --surface: var(--ec-card);
+  --surface-2: var(--ec-card-soft);
+  --border: var(--ec-border);
+  --text: var(--ec-text);
+  --muted: var(--ec-muted);
+  --primary: var(--ec-primary);
+  --primary-600: var(--ec-primary-soft);
+  --primary-700: var(--ec-primary-deep);
+  --accent: var(--ec-accent);
+  --accent-soft: var(--ec-accent-soft);
+  --gradient: var(--ec-gradient);
+  --danger: var(--ec-danger);
+  --warning: var(--ec-warning);
+  --success: var(--ec-success);
+
+  /* Shadows */
+  --shadow-sm: 0 10px 24px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 18px 44px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 28px 64px rgba(15, 23, 42, 0.14);
+
+  /* Radius */
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 28px;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 28px;
+  --s-8: 32px;
+
+  /* Typography */
+  --font-sans: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-22: 22px;
+  --fs-28: 28px;
+  --fs-34: 34px;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --ease: cubic-bezier(0.4, 0.14, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 180ms;
+}

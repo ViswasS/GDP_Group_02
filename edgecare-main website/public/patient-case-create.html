@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare - Create Case</title>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/toast.css" />
+  <style>
+    .section-card{border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s-5);background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,251,255,0.96));box-shadow:var(--shadow-sm);}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s-2);margin-bottom:var(--s-3);}
+    .section-title{margin:0;color:var(--text);font-size:var(--fs-18);font-weight:var(--fw-700);}
+    .section-note{color:var(--muted);font-size:var(--fs-14);margin:0;}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s-3);}
+    .chip-grid{display:flex;flex-wrap:wrap;gap:10px;}
+    .chip-check{display:flex;align-items:center;gap:6px;padding:10px 12px;border:1px solid rgba(37,99,235,0.12);border-radius:999px;background:rgba(248,251,255,0.98);cursor:pointer;font-size:var(--fs-13);box-shadow:0 6px 14px rgba(15,23,42,0.03);}
+    .chip-check input{width:auto;margin:0;accent-color:var(--primary);}
+    .slider-row{display:flex;flex-direction:column;gap:6px;}
+    .slider-value{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(37,99,235,0.1);color:var(--primary-700);font-weight:var(--fw-700);}
+    .radio-row{display:flex;flex-wrap:wrap;gap:10px;}
+    .radio-pill{display:flex;align-items:center;gap:6px;padding:10px 14px;border:1px solid rgba(20,184,166,0.16);border-radius:999px;cursor:pointer;background:#ffffff;box-shadow:0 6px 14px rgba(15,23,42,0.03);}
+    .radio-pill input{width:auto;margin:0;accent-color:var(--accent);}
+    .photo-drop{border:1px dashed rgba(37,99,235,0.22);padding:18px;border-radius:var(--r-md);background:linear-gradient(180deg,rgba(248,251,255,0.98),rgba(255,255,255,0.92));}
+    .thumb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:12px;}
+    .thumb{position:relative;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;background:#fff;box-shadow:0 10px 18px rgba(15,23,42,0.06);}
+    .thumb img{width:100%;height:120px;object-fit:cover;display:block;}
+    .thumb button{position:absolute;top:6px;right:6px;border:none;background:rgba(15,23,42,0.62);color:#fff;padding:4px 6px;border-radius:8px;cursor:pointer;}
+    .status-banner{margin-top:12px;padding:12px 14px;border-radius:var(--r-sm);border:1px solid rgba(20,184,166,0.18);background:rgba(20,184,166,0.08);color:#0f766e;font-weight:var(--fw-600);}
+    .status-banner.error{background:rgba(239,68,68,0.08);color:#b91c1c;border-color:rgba(239,68,68,0.24);}
+    .followup-shell{display:flex;flex-direction:column;gap:14px;}
+    .context-note{padding:14px 16px;border-radius:16px;border:1px solid rgba(37,99,235,0.12);background:rgba(248,251,255,0.94);}
+    .context-note__eyebrow{display:block;margin-bottom:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-700);}
+    .context-note__text{margin:0;color:var(--muted);font-size:var(--fs-14);line-height:1.6;}
+    .followup-intro{padding:14px 16px;border-radius:16px;border:1px solid rgba(37,99,235,0.12);background:rgba(248,251,255,0.94);color:var(--muted);}
+    .followup-group{padding:16px;border-radius:18px;border:1px solid rgba(20,184,166,0.14);background:#ffffff;box-shadow:0 8px 18px rgba(15,23,42,0.04);}
+    .followup-group h3{margin:0 0 6px;color:var(--text);font-size:var(--fs-16);}
+    .followup-group p{margin:0 0 12px;color:var(--muted);font-size:var(--fs-14);}
+    .followup-alert{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(245,158,11,0.18);background:rgba(255,251,235,0.96);color:#b45309;font-weight:var(--fw-600);}
+    .followup-question{display:flex;flex-direction:column;gap:10px;}
+    .followup-question + .followup-question{margin-top:14px;}
+  </style>
+</head>
+<body class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/patient-dashboard.html" aria-label="EdgeCare patient dashboard">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Care Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">New Case</div>
+    </div>
+    <div class="topbar-right">
+      <div class="nav-links">
+        <a class="nav-link" href="/patient-dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/patient-cases.html">Cases</a>
+        <a class="nav-link" href="/patient-profile.html">Profile</a>
+      </div>
+      <span id="meLabel" class="user-chip muted"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card card--hero">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Case Intake</div>
+          <div class="card-title">Create a New Case</div>
+          <div class="card-subtitle">AI Support Active starts with every new case. You can request doctor review later if you want a human review.</div>
+        </div>
+        <a class="btn" href="/patient-cases.html">My Cases</a>
+      </div>
+
+      <form id="caseForm" class="form" novalidate>
+        <div class="section-card">
+          <div class="section-head">
+            <h2 class="section-title">Issue Details</h2>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="title" class="label">Title *</label>
+              <input id="title" class="input" placeholder="e.g., Persistent rash on arm" required />
+            </div>
+            <div class="field">
+              <label for="duration" class="label">Duration in days</label>
+              <input id="duration" class="input" type="number" min="0" step="1" placeholder="3" />
+            </div>
+            <div class="field">
+              <label for="durationLabel" class="label">About how long has this been happening?</label>
+              <select id="durationLabel" class="input">
+                <option value="">Select...</option>
+                <option>1-2 days</option>
+                <option>3-5 days</option>
+                <option>1 week</option>
+                <option>2 weeks</option>
+                <option>1 month</option>
+                <option>2+ months</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rashLocation" class="label">Rash Location</label>
+              <select id="rashLocation" class="input">
+                <option value="">Select...</option>
+                <option>Face</option>
+                <option>Neck</option>
+                <option>Chest</option>
+                <option>Back</option>
+                <option>Arms</option>
+                <option>Hands</option>
+                <option>Legs</option>
+                <option>Feet</option>
+                <option>Torso</option>
+                <option>Scalp</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="medications" class="label">Medications</label>
+              <input id="medications" class="input" placeholder="e.g., Ibuprofen 400mg" />
+            </div>
+            <div class="field">
+              <label for="triggers" class="label">Triggers (optional)</label>
+              <input id="triggers" class="input" placeholder="e.g., new detergent, sun exposure" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="description" class="label">Additional notes</label>
+            <textarea id="description" class="input" rows="4" placeholder="Add any extra details that may help explain the rash, irritation, or skin change."></textarea>
+          </div>
+          <label class="checkbox-row" style="margin-top:8px;">
+            <input id="isEmergency" type="checkbox" />
+            <span>Mark as emergency</span>
+          </label>
+        </div>
+
+        <div class="section-card">
+          <div class="section-head">
+            <h2 class="section-title">Associated Symptoms</h2>
+          </div>
+          <div class="chip-grid" id="symptomOptions">
+            <label class="chip-check"><input type="checkbox" value="Redness" />Redness</label>
+            <label class="chip-check"><input type="checkbox" value="Swelling" />Swelling</label>
+            <label class="chip-check"><input type="checkbox" value="Itching" />Itching</label>
+            <label class="chip-check"><input type="checkbox" value="Burning" />Burning</label>
+            <label class="chip-check"><input type="checkbox" value="Blisters" />Blisters</label>
+            <label class="chip-check"><input type="checkbox" value="Dryness/Scaling" />Dryness/Scaling</label>
+            <label class="chip-check"><input type="checkbox" value="Pain" />Pain</label>
+            <label class="chip-check"><input type="checkbox" value="Fever/Chills" />Fever/Chills</label>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Environmental Context</h2>
+              <p class="section-note">Optional context that can help tailor a few intake prompts and later review.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Climate / environment</label>
+            <div class="radio-row" id="environmentClimateGroup">
+              <label class="radio-pill"><input type="radio" name="environmentClimate" value="HOT_HUMID" />Hot / humid</label>
+              <label class="radio-pill"><input type="radio" name="environmentClimate" value="DRY_LOW_HUMIDITY" />Dry / low-humidity</label>
+              <label class="radio-pill"><input type="radio" name="environmentClimate" value="DUSTY_POLLUTION" />Dusty / pollution-heavy</label>
+              <label class="radio-pill"><input type="radio" name="environmentClimate" value="RAINY_DAMP" />Rainy / damp</label>
+              <label class="radio-pill"><input type="radio" name="environmentClimate" value="CHANGED_ENVIRONMENT" />Recently changed environment / traveled</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Possible trigger context</label>
+            <div class="chip-grid" id="environmentExposureOptions">
+              <label class="chip-check"><input type="checkbox" value="SWEATING_HEAT" />Sweating / heat exposure</label>
+              <label class="chip-check"><input type="checkbox" value="NEW_SKINCARE" />New skincare / cosmetic product</label>
+              <label class="chip-check"><input type="checkbox" value="OUTDOOR_SUN" />Outdoor exposure / sun</label>
+              <label class="chip-check"><input type="checkbox" value="DUST_POLLUTION" />Dust / pollution exposure</label>
+              <label class="chip-check"><input type="checkbox" value="SEASONAL_ALLERGY" />Seasonal allergy period</label>
+            </div>
+          </div>
+
+          <div id="environmentContextNote" class="context-note" style="display:none;"></div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-head">
+            <h2 class="section-title">Intensity</h2>
+            <p class="section-note">Use sliders to describe how it feels.</p>
+          </div>
+          <div class="grid-2">
+            <div class="slider-row">
+              <div class="row" style="justify-content:space-between;">
+                <label class="label" for="severity">Severity level</label>
+                <span class="slider-value"><span id="severityValue">5</span>/10</span>
+              </div>
+              <input id="severity" type="range" min="1" max="10" value="5" />
+            </div>
+            <div class="slider-row">
+              <div class="row" style="justify-content:space-between;">
+                <label class="label" for="itchiness">Itchiness level</label>
+                <span class="slider-value"><span id="itchinessValue">5</span>/10</span>
+              </div>
+              <input id="itchiness" type="range" min="1" max="10" value="5" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Is it spreading?</label>
+            <div class="radio-row" id="spreadingGroup">
+              <label class="radio-pill"><input type="radio" name="spread" value="SPREADING" />Spreading</label>
+              <label class="radio-pill"><input type="radio" name="spread" value="SAME" />Same</label>
+              <label class="radio-pill"><input type="radio" name="spread" value="IMPROVING" />Improving</label>
+              <label class="radio-pill"><input type="radio" name="spread" value="UNSURE" />Unsure</label>
+            </div>
+          </div>
+        </div>
+
+        <div id="followUpSection" class="section-card" style="display:none;">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Follow-up Questions</h2>
+              <p class="section-note">These appear only when your answers suggest a few extra details would improve the intake.</p>
+            </div>
+          </div>
+          <div class="followup-shell">
+            <div class="followup-intro">Answer any follow-up questions that apply. They help AI support and doctors understand severity, urgency, and symptom pattern more clearly.</div>
+            <div id="followUpQuestions"></div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-head">
+            <h2 class="section-title">Photos (Optional)</h2>
+            <p class="section-note">Add one or more images of the rash.</p>
+          </div>
+          <div class="photo-drop">
+            <input id="photos" type="file" accept="image/*" multiple />
+            <div id="photoPreview" class="thumb-grid"></div>
+          </div>
+        </div>
+
+        <div class="page-actions">
+          <button id="submitBtn" class="btn primary" type="submit">Create case</button>
+          <button id="resetBtn" class="btn" type="button">Reset</button>
+        </div>
+        <div id="statusBanner" class="status-banner" style="display:none;"></div>
+        <div id="formError" class="status-banner error" style="display:none;"></div>
+        <pre id="out" class="pre"></pre>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/js/doctor/api.js"></script>
+  <script src="/js/patient/case-ml.js"></script>
+  <script type="module" src="/js/patient/case-create.js"></script>
+</body>
+</html>

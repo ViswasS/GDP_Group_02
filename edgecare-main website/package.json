@@ -1,0 +1,50 @@
+{
+  "name": "edgecare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "test:unit": "jest --runInBand --colors",
+    "test:unit:summary": "jest --runInBand --silent",
+    "test:unit:patient-profile": "jest --runInBand test/unit/modules/patient/patient.service.updateProfile.jest.test.js test/unit/common/middleware/auth.middleware.jest.test.js test/unit/common/middleware/rbac.middleware.jest.test.js",
+    "test:unit:case-create": "jest --runInBand test/unit/modules/cases/cases.service.createCase.jest.test.js",
+    "test:unit:recent-results": "jest --runInBand test/unit/modules/cases/cases.service.listCasesForUser.jest.test.js",
+    "test:unit:security": "jest --runInBand test/unit/modules/auth/auth.service.password.jest.test.js test/unit/common/middleware/auth.middleware.jest.test.js test/unit/common/middleware/rbac.middleware.jest.test.js",
+    "test:unit:questionnaire": "jest --runInBand test/unit/modules/questionnaire/questionnaire.engine.jest.test.js",
+    "test:unit:health-report": "jest --runInBand test/unit/modules/reports/healthReport.builder.jest.test.js",
+    "test:unit:selective-export": "jest --runInBand test/unit/modules/exports/selectiveExport.service.jest.test.js",
+    "test:unit:doctor-history": "jest --runInBand test/unit/modules/doctor/doctorHistory.service.jest.test.js",
+    "test:unit:emergency-contacts": "jest --runInBand test/unit/modules/patient/emergency-contacts.service.test.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:push": "prisma db push",
+    "prisma:studio": "prisma studio",
+    "seed": "node src/db/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "nodemailer": "^8.0.4",
+    "prisma": "^6.19.2",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11"
+  }
+}

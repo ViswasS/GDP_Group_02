@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare Report</title>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/toast.css" />
+</head>
+<body class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/patient-cases.html" aria-label="EdgeCare patient cases">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Care Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">Report View</div>
+    </div>
+    <div class="topbar-right">
+      <button id="reportPrintBtn" class="btn primary" type="button">Print / Save as PDF</button>
+      <button id="reportCloseBtn" class="btn" type="button">Close</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="reportRoot" class="card card--hero">
+      <div class="empty-state empty-state--loading">
+        <strong>Loading report</strong>
+        <span>Preparing the latest health report and verifying your session.</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/js/doctor/api.js"></script>
+  <script src="/js/shared/emergency-contacts.js"></script>
+  <script src="/js/patient/report-utils.js"></script>
+  <script src="/js/patient/report-view.js"></script>
+</body>
+</html>

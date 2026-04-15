@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare - Admin Case Queue</title>
+
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/toast.css" />
+  <style>
+    .queue-hero{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:28px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,251,255,0.94));box-shadow:0 16px 36px rgba(15,23,42,0.06);}
+    .queue-hero h1{margin:8px 0 10px;font-size:clamp(1.8rem,3vw,2.3rem);letter-spacing:-0.04em;color:var(--text);}
+    .queue-hero p{margin:0;color:var(--muted);line-height:1.7;}
+    .queue-shell{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin-top:24px;}
+    .queue-card{border:1px solid var(--border);border-radius:24px;background:#fff;padding:24px;box-shadow:0 16px 36px rgba(15,23,42,0.06);}
+    .queue-list{display:flex;flex-direction:column;gap:14px;}
+    .queue-item{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:18px;border-radius:18px;border:1px solid rgba(226,232,240,0.9);background:rgba(248,251,255,0.72);}
+    .queue-item__title{margin:0;font-size:16px;color:var(--text);}
+    .queue-item__meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;color:var(--muted);font-size:13px;}
+    .queue-item__right{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+    .queue-modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,0.42);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000;}
+    .queue-modal{width:min(460px,100%);border:1px solid var(--border);border-radius:24px;background:#fff;padding:24px;box-shadow:0 28px 56px rgba(15,23,42,0.18);}
+    .queue-modal__title{margin:0 0 8px;font-size:22px;letter-spacing:-0.03em;color:var(--text);}
+    .queue-modal__text{margin:0 0 18px;color:var(--muted);line-height:1.6;}
+    .empty-state{padding:18px;border-radius:18px;border:1px dashed rgba(148,163,184,0.48);background:rgba(248,251,255,0.68);color:var(--muted);}
+    @media (max-width: 760px){
+      .queue-hero,.queue-item{flex-direction:column;}
+      .queue-item__right{align-items:flex-start;}
+    }
+  </style>
+</head>
+<body class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/admin/dashboard.html" aria-label="EdgeCare admin dashboard">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Admin Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">Case Queue</div>
+    </div>
+    <div class="topbar-right">
+      <div class="nav-links">
+        <a class="nav-link" href="/admin/dashboard.html">Dashboard</a>
+        <a class="nav-link nav-link--active" href="/admin/insights.html">Case Queue</a>
+        <a class="nav-link" href="/admin/ai-console.html">AI Console</a>
+      </div>
+      <span id="meLabel" class="user-chip muted"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="queue-hero">
+      <div>
+        <div class="eyebrow">Operational Queue</div>
+        <h1>Assign doctor review for cases still waiting in the AI Support Active lane.</h1>
+        <p>Use this queue for manual doctor assignment when admin intervention is needed. The main dashboard remains the operational overview; this screen stays focused on queue action.</p>
+      </div>
+      <button id="refreshBtn" class="btn primary">Refresh queue</button>
+    </section>
+
+    <div class="queue-shell">
+      <section class="queue-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Unassigned Case Queue</div>
+            <div class="card-subtitle">Submitted cases that are still unassigned and available for doctor review.</div>
+          </div>
+          <span id="queueStatus" class="muted">Loading queue...</span>
+        </div>
+        <div id="caseList" class="queue-list"></div>
+        <div id="empty" class="empty-state" style="display:none;">No pending unassigned cases are waiting right now.</div>
+      </section>
+    </div>
+  </div>
+
+  <div id="modalBackdrop" class="queue-modal-backdrop">
+    <div class="queue-modal">
+      <h2 class="queue-modal__title">Assign Doctor Review</h2>
+      <p class="queue-modal__text">Choose a doctor to move this case from AI Support Active into doctor review.</p>
+
+      <label for="doctorSelect" class="label">Select doctor</label>
+      <select id="doctorSelect" class="input"></select>
+
+      <div class="row" style="margin-top:16px;">
+        <button id="assignBtn" class="btn primary">Assign doctor</button>
+        <button id="closeBtn" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/admin/js/api.js"></script>
+  <script src="/admin/js/case-queue.js"></script>
+</body>
+</html>

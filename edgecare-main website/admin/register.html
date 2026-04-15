@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EdgeCare â€¢ Admin Register</title>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/toast.css" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="brand">EdgeCare</div>
+      <div class="pill">Admin Portal</div>
+    </div>
+    <div class="topbar-right">
+      <a class="link" href="/admin/index.html">Back to Login</a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="grid">
+      <div class="card" style="max-width:620px;margin:0 auto;">
+        <h1 class="title">Admin Registration</h1>
+        <p class="muted">
+          Create an administrator account to manage case assignment and workflows.
+        </p>
+
+        <div class="form">
+          <div class="row">
+            <div style="flex:1;">
+              <label>First Name</label>
+              <input id="firstName" type="text" placeholder="Ada" autocomplete="given-name" />
+            </div>
+            <div style="flex:1;">
+              <label>Last Name</label>
+              <input id="lastName" type="text" placeholder="Lovelace" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <label>Email</label>
+          <input id="email" type="email" placeholder="admin@edgecare.com" />
+
+          <label>Password</label>
+          <input id="password" type="password" placeholder="Admin@12345" />
+
+          <label>Admin Level</label>
+          <input
+            id="adminLevel"
+            class="input"
+            placeholder="Data Admin"
+            value="Data Admin"
+          />
+
+          <div class="row" style="margin-top:12px;">
+            <button id="registerBtn" class="btn primary">
+              Create Admin Account
+            </button>
+            <button id="goLoginBtn" class="btn" type="button">
+              Go to Login
+            </button>
+          </div>
+        </div>
+
+        <pre id="out" class="pre"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/admin/js/api.js"></script>
+  <script src="/admin/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare â€¢ Admin Login</title>
+
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/toast.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="brand">EdgeCare</div>
+      <div class="pill">Admin Portal</div>
+    </div>
+    <div class="topbar-right">
+      <a class="link" href="/admin/register.html">Create Admin</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card" style="max-width:520px;margin:auto;">
+      <h1 class="title">Admin Login</h1>
+      <p class="muted">Manage triage case assignment.</p>
+
+      <div class="form">
+        <label>Email</label>
+        <input id="email" type="email" />
+
+        <label>Password</label>
+        <input id="password" type="password" />
+
+        <button id="loginBtn" class="btn primary">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/admin/js/api.js"></script>
+  <script src="/admin/js/auth.js"></script>
+</body>
+</html>

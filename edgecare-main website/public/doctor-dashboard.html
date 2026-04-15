@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare - Doctor Dashboard</title>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/toast.css" />
+
+</head>
+<body class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/doctor-dashboard.html" aria-label="EdgeCare doctor dashboard">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Care Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">Doctor Dashboard</div>
+    </div>
+    <div class="topbar-right">
+      <div class="nav-links">
+        <a class="nav-link nav-link--active" href="/doctor-dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/doctor-profile.html">Profile</a>
+      </div>
+      <span id="meLabel" class="user-chip muted"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card card--hero" style="margin-bottom: var(--s-4);">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Doctor Workspace</div>
+          <div class="card-title">Assigned Cases</div>
+          <div class="card-subtitle">Search, filter, and open the cases assigned to you.</div>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Assigned</div>
+          <div class="stat-value" id="kpiAssigned">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">In Review</div>
+          <div class="stat-value" id="kpiInReview">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Closed</div>
+          <div class="stat-value" id="kpiClosed">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout-split">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Assigned Cases</div>
+          <div class="row" style="gap:10px;">
+            <input id="search" class="input" placeholder="Search by title, case ID, patient name, or patient email..." />
+            <select id="statusFilter" class="input" style="max-width:180px;">
+              <option value="">All statuses</option>
+              <option value="SUBMITTED">AI Support Active</option>
+              <option value="IN_REVIEW">In Review</option>
+              <option value="CLOSED">Closed</option>
+            </select>
+            <button id="refreshBtn" class="btn">Refresh</button>
+          </div>
+        </div>
+
+        <div id="casesList" class="list">
+          <div class="empty-state empty-state--loading"><strong>Loading assigned cases</strong><span>Preparing your queue, urgency markers, and latest review status.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Case Preview</div>
+            <div class="card-subtitle">Open a case to view triage and chat.</div>
+          </div>
+        </div>
+        <div id="caseDetails" class="empty-state"><strong>Select a case</strong><span>Choose a case from the list to open the full review workspace and conversation.</span></div>
+        <div id="emptyState" class="muted" style="display:none; padding:12px 0;">
+          No assigned cases found.
+        </div>
+        <pre id="out" class="pre"></pre>
+      </div>
+    </div>
+  </div>
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/js/doctor/api.js"></script>
+  <script src="/js/doctor/dashboard.js"></script>
+</body>
+</html>

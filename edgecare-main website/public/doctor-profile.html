@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare - Doctor Profile</title>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/toast.css" />
+</head>
+<body class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/doctor-dashboard.html" aria-label="EdgeCare doctor dashboard">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Care Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">Doctor Portal</div>
+    </div>
+    <div class="topbar-right">
+      <div class="nav-links">
+        <a class="nav-link" href="/doctor-dashboard.html">Dashboard</a>
+        <a class="nav-link nav-link--active" href="/doctor-profile.html">Profile</a>
+      </div>
+      <span id="meLabel" class="user-chip muted"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card card--hero" style="margin-bottom: var(--s-4);">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Doctor Profile</div>
+          <div class="card-title">My Profile</div>
+          <div class="card-subtitle">Update your professional details</div>
+        </div>
+        <button id="editBtn" class="btn small" aria-label="Edit profile">Edit</button>
+      </div>
+
+      <div id="profileStatus" class="muted">Loading profile...</div>
+
+      <div id="profileForm" class="stack" style="display:none;">
+        <div class="form-grid">
+          <div class="field">
+            <label class="label" for="firstName">First Name</label>
+            <input id="firstName" class="input" type="text" />
+          </div>
+          <div class="field">
+            <label class="label" for="lastName">Last Name</label>
+            <input id="lastName" class="input" type="text" />
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="label" for="dob">Date of Birth</label>
+            <input id="dob" class="input" type="date" />
+          </div>
+          <div class="field">
+            <label class="label" for="gender">Gender</label>
+            <select id="gender" class="input">
+              <option value="">Select</option>
+              <option value="MALE">Male</option>
+              <option value="FEMALE">Female</option>
+              <option value="OTHER">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="label" for="specialty">Specialty</label>
+            <input id="specialty" class="input" type="text" placeholder="Dermatology" />
+          </div>
+          <div class="field">
+            <label class="label" for="licenseNumber">License Number</label>
+            <input id="licenseNumber" class="input" type="text" />
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="label" for="experience">Experience (years)</label>
+            <input id="experience" class="input" type="number" min="0" step="1" />
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <input id="email" class="input" type="email" disabled />
+            <div class="help">Email is read-only</div>
+          </div>
+        </div>
+
+        <div class="row" style="justify-content:flex-end; gap:12px; margin-top: var(--s-4);" id="actionRow">
+          <button id="cancelBtn" class="btn">Cancel</button>
+          <button id="saveBtn" class="btn primary">Save Changes</button>
+        </div>
+      </div>
+
+      <div id="out" class="pre"></div>
+    </div>
+  </div>
+
+  <script src="/js/doctor/toast.js"></script>
+  <script src="/js/doctor/api.js"></script>
+  <script src="/js/doctor/profile.js"></script>
+</body>
+</html>

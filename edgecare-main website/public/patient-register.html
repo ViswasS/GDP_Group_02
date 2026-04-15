@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EdgeCare - Patient Register</title>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/toast.css" />
+</head>
+<body data-default-role="PATIENT">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand-lockup brand-lockup--link" href="/patient-register.html" aria-label="EdgeCare patient registration">
+        <img src="/assets/logo.png" alt="EdgeCare logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand">EdgeCare</span>
+          <span class="brand-subtitle">Care Intelligence</span>
+        </span>
+      </a>
+      <div class="pill">Patient Signup</div>
+    </div>
+    <div class="topbar-right">
+      <a class="link" href="./patient-login.html">Back to Login</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card card--hero" style="max-width:760px; margin: 0 auto;">
+        <div class="eyebrow">Account Setup</div>
+        <h1 class="title">Create a Patient Account</h1>
+        <p class="muted">Register to submit and track your cases.</p>
+
+        <div id="formError" class="muted" style="display:none; color: var(--danger); font-weight:600;"></div>
+
+        <div class="form">
+          <div class="row">
+            <div style="flex:1;">
+              <label>First Name</label>
+              <input id="firstName" type="text" placeholder="Jane" autocomplete="given-name" />
+            </div>
+            <div style="flex:1;">
+              <label>Last Name</label>
+              <input id="lastName" type="text" placeholder="Doe" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <label>Email</label>
+          <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+
+          <label>Password</label>
+          <input id="password" type="password" placeholder="Minimum 8 characters" autocomplete="new-password" />
+
+          <label>Confirm Password</label>
+          <input id="confirmPassword" type="password" placeholder="Re-enter password" autocomplete="new-password" />
+
+          <label>Role</label>
+          <select id="role" class="input">
+            <option value="">Select role</option>
+            <option value="DOCTOR">Doctor</option>
+            <option value="PATIENT" selected>Patient</option>
+          </select>
+
+          <div id="doctorFields">
+            <div class="row">
+              <div style="flex:1;">
+                <label>License Number</label>
+                <input id="licenseNumber" class="input" placeholder="AP-LIC-002" />
+              </div>
+              <div style="flex:1;">
+                <label>Specialty</label>
+                <input id="specialty" class="input" placeholder="Dermatology" />
+              </div>
+            </div>
+
+            <label>Experience (years)</label>
+            <input id="experience" class="input" type="number" min="0" step="1" placeholder="5" />
+          </div>
+
+          <div id="patientFields" style="display:none;">
+            <label>Preferred Language</label>
+            <select id="language" class="input">
+              <option value="en" selected>English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+            <label style="display:flex; gap:8px; align-items:center;">
+              <input id="consent" type="checkbox" style="width:auto;" />
+              <span>I agree to share my case details with assigned doctors.</span>
+            </label>
+          </div>
+
+          <button id="registerBtn" class="btn primary" disabled>Create Account</button>
+          <button id="goLoginBtn" class="btn" type="button">Go to Login</button>
+          <pre id="out" class="pre"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/doctor/toast.js"></script>
+  <script src="./js/doctor/api.js"></script>
+  <script src="./js/auth/register.js"></script>
+</body>
+</html>

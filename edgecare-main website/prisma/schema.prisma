@@ -1,0 +1,291 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  createdAt           DateTime             @default(now()) @map("Created_At")
+  email               String               @unique @map("Email")
+  mfaEnabled          Boolean              @default(false) @map("MFA_Enabled")
+  passwordHash        String               @map("Password")
+  role                Role                 @map("Role")
+  updatedAt           DateTime             @updatedAt @map("Updated_At")
+  id                  Int                  @id @default(autoincrement()) @map("User_ID")
+  adminProfile        AdminProfile?
+  auditLogs           AuditLog[]           @relation("AuditActor")
+  doctorProfile       DoctorProfile?
+  notifications       Notification[]
+  passwordResetTokens PasswordResetToken[]
+  patientProfile      PatientProfile?
+  refreshTokens       RefreshToken[]
+
+  @@map("User")
+}
+
+model AdminProfile {
+  adminId    Int     @id @map("Admin_ID")
+  adminLevel String  @default("Data Admin") @map("Admin_Level")
+  firstName  String? @map("First_Name")
+  lastName   String? @map("Last_Name")
+  user       User    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@map("Admin_Profile")
+}
+
+model DoctorProfile {
+  doctorId      Int            @id @map("Doctor_ID")
+  licenseNumber String         @unique @map("License_Number")
+  specialty     String         @map("Specialty")
+  experience    Int            @default(0) @map("Experience")
+  dob           DateTime?      @map("DOB")
+  firstName     String?        @map("First_Name")
+  gender        Gender?        @map("Gender")
+  lastName      String?        @map("Last_Name")
+  user          User           @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  reviews       DoctorReview[]
+  assignedCases TriageCase[]   @relation("AssignedDoctor")
+
+  @@map("Doctor_Profile")
+}
+
+model PatientProfile {
+  patientId              Int          @id @map("Patient_ID")
+  language               String       @default("en") @map("Language")
+  consentStatus          Boolean      @default(false) @map("Consent_Status")
+  dob                    DateTime?    @map("DOB")
+  firstName              String?      @map("First_Name")
+  gender                 Gender?      @map("Gender")
+  lastName               String?      @map("Last_Name")
+  allergies              String?      @map("Allergies") @db.Text
+  knownMedicalConditions String?      @map("Known_Medical_Conditions") @db.Text
+  user                   User         @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  cases                  TriageCase[]
+
+  @@map("Patient_Profile")
+}
+
+/// *
+/// * Case intake / questionnaire answers for a single case.
+/// * This is NOT a reusable template; it's the patient's submitted info.
+model CaseIntake {
+  id          Int         @id @default(autoincrement()) @map("Questionnaire_ID")
+  title       String      @map("Title")
+  isActive    Boolean     @default(true) @map("Is_Active")
+  duration    String?     @map("Duration")
+  medications String?     @map("Medications") @db.Text
+  case        TriageCase?
+
+  @@map("Questionnaire")
+}
+
+model AIModel {
+  id         Int            @id @default(autoincrement()) @map("Model_ID")
+  name       String         @map("Name")
+  version    String         @map("Version")
+  deployedAt DateTime       @default(now()) @map("Deployed_At")
+  results    TriageResult[]
+
+  @@unique([name, version], map: "uq_model_name_version")
+  @@map("AI_Model")
+}
+
+model TriageCase {
+  id               Int               @id @default(autoincrement()) @map("Case_ID")
+  patientId        Int               @map("Patient_ID")
+  intakeId         Int               @unique @map("Questionnaire_ID")
+  isEmergency      Boolean           @default(false) @map("Is_Emergency")
+  assignedDoctorId Int?              @map("Doctor_ID")
+  status           CaseStatus        @default(SUBMITTED) @map("Status")
+  submittedAt      DateTime          @default(now()) @map("Submitted_At")
+  rashLocation     String?           @map("Rash_Location")
+  durationLabel    String?           @map("Duration_Label")
+  symptoms         Json?             @map("Symptoms")
+  severity         Int?              @map("Severity")
+  itchiness        Int?              @map("Itchiness")
+  spreadingStatus  String?           @map("Spreading_Status")
+  triggers         String?           @map("Triggers") @db.Text
+  imageUrls        Json?             @map("Image_URLs")
+  mlImageResult    Json?             @map("ML_Image_Result")
+  mlSymptomsResult Json?             @map("ML_Symptoms_Result")
+  mlFusedResult    Json?             @map("ML_Fused_Result")
+  mlReport         Json?             @map("ML_Report")
+  mlStatus         String            @default("PENDING") @map("ML_Status")
+  mlDebug          Json?             @map("ML_Debug")
+  mlLastError      String?           @map("ML_Last_Error") @db.Text
+  doctorNotes      String?           @map("Doctor_Notes") @db.Text
+  doctorRecommendation String?       @map("Doctor_Recommendation") @db.Text
+  doctorSeverityOverride String?     @map("Doctor_Severity_Override")
+  doctorFollowUpNeeded Boolean?      @map("Doctor_Follow_Up_Needed")
+  doctorReviewedAt DateTime?         @map("Doctor_Reviewed_At")
+  conversation     CaseConversation? @relation("CaseToConversation")
+  reviews          DoctorReview[]
+  images           CaseImage[]
+  assignedDoctor   DoctorProfile?    @relation("AssignedDoctor", fields: [assignedDoctorId], references: [doctorId])
+  patient          PatientProfile    @relation(fields: [patientId], references: [patientId], onDelete: Cascade)
+  intake           CaseIntake        @relation(fields: [intakeId], references: [id], onDelete: Cascade)
+  result           TriageResult?
+
+  @@index([patientId], map: "idx_case_patient")
+  @@index([assignedDoctorId], map: "idx_case_doctor")
+  @@map("Triage_Case")
+}
+
+model CaseImage {
+  id            Int        @id @default(autoincrement()) @map("Image_ID")
+  caseId        Int        @map("Case_ID")
+  questionFlags String?    @map("Question_Flags") @db.Text
+  imageBlob     Bytes?     @map("Image") @db.MediumBlob
+  imageUrl      String?    @map("Image_URL")
+  mimeType      String?    @map("Mime_Type")
+  fileSize      Int?       @map("File_Size")
+  sha256        String?    @map("Sha256")
+  uploadedAt    DateTime   @default(now()) @map("Uploaded_At")
+  triageCase    TriageCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+
+  @@index([caseId], map: "idx_image_case")
+  @@map("Image")
+}
+
+model CaseConversation {
+  id        Int           @id @default(autoincrement()) @map("Conversation_ID")
+  caseId    Int           @unique @map("Case_ID")
+  createdAt DateTime      @default(now()) @map("Created_At")
+  updatedAt DateTime      @updatedAt @map("Updated_At")
+  case      TriageCase    @relation("CaseToConversation", fields: [caseId], references: [id], onDelete: Cascade)
+  messages  CaseMessage[]
+
+  @@map("Case_Conversation")
+}
+
+model CaseMessage {
+  id             Int              @id @default(autoincrement()) @map("Message_ID")
+  conversationId Int              @map("Conversation_ID")
+  senderId       Int              @map("Sender_ID")
+  senderRole     String           @map("Sender_Role")
+  content        String           @map("Content") @db.Text
+  type           String           @default("TEXT") @map("Type")
+  messageType    String           @default("USER") @map("Message_Type")
+  createdAt      DateTime         @default(now()) @map("Created_At")
+  tempId         String?          @map("Temp_ID")
+  metaJson       Json?            @map("Meta_Json")
+  conversation   CaseConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@unique([conversationId, tempId], map: "uq_msg_temp_per_convo")
+  @@index([conversationId, id], map: "idx_message_conversation")
+  @@index([senderId, id], map: "idx_message_sender")
+  @@map("Case_Message")
+}
+
+model TriageResult {
+  id              Int        @id @default(autoincrement()) @map("Result_ID")
+  caseId          Int        @unique @map("Case_ID")
+  recommendation  String     @map("Recommendation") @db.Text
+  confidenceScore Decimal?   @map("Confidence_Score") @db.Decimal(5, 4)
+  generatedAt     DateTime   @default(now()) @map("Generated_At")
+  modelId         Int?       @map("Model_ID")
+  triageCase      TriageCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  model           AIModel?   @relation(fields: [modelId], references: [id])
+
+  @@index([modelId], map: "idx_result_model")
+  @@map("Triage_Result")
+}
+
+model DoctorReview {
+  id              Int            @id @default(autoincrement()) @map("Review_ID")
+  caseId          Int            @map("Case_ID")
+  doctorId        Int?           @map("Doctor_ID")
+  actionNotes     String         @map("Action_Notes") @db.Text
+  reviewTimestamp DateTime       @default(now()) @map("Review_Timestamp")
+  triageCase      TriageCase     @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  doctor          DoctorProfile? @relation(fields: [doctorId], references: [doctorId])
+
+  @@index([caseId], map: "idx_review_case")
+  @@index([doctorId], map: "idx_review_doctor")
+  @@map("Doctor_Review")
+}
+
+model Notification {
+  id        Int                @id @default(autoincrement()) @map("Notification_ID")
+  userId    Int                @map("User_ID")
+  message   String             @map("Message") @db.Text
+  status    NotificationStatus @default(SENT) @map("Status")
+  createdAt DateTime           @default(now()) @map("Created_At")
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "idx_notification_user")
+  @@map("Notification")
+}
+
+model AuditLog {
+  id          Int      @id @default(autoincrement()) @map("Audit_ID")
+  actorId     Int?     @map("User_ID")
+  action      String   @map("Action")
+  targetTable String?  @map("Target_Table")
+  targetId    Int?     @map("Target_ID")
+  metaJson    String?  @map("Meta_Json") @db.Text
+  timestamp   DateTime @default(now()) @map("Timestamp")
+  actor       User?    @relation("AuditActor", fields: [actorId], references: [id])
+
+  @@index([actorId], map: "idx_audit_actor")
+  @@map("Audit_Log")
+}
+
+/// *
+/// * Refresh tokens for JWT auth (recommended instead of Session table)
+model RefreshToken {
+  id        Int       @id @default(autoincrement()) @map("Refresh_ID")
+  userId    Int       @map("User_ID")
+  tokenHash String    @unique @map("Token_Hash")
+  revokedAt DateTime? @map("Revoked_At")
+  expiresAt DateTime  @map("Expires_At")
+  createdAt DateTime  @default(now()) @map("Created_At")
+  ipAddress String?   @map("IP_Address")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "idx_refresh_user")
+  @@map("Refresh_Token")
+}
+
+model PasswordResetToken {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+  ip        String?
+  userAgent String?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+enum Role {
+  ADMIN
+  DOCTOR
+  PATIENT
+}
+
+enum CaseStatus {
+  SUBMITTED
+  IN_REVIEW
+  CLOSED
+}
+
+enum NotificationStatus {
+  SENT
+  DELIVERED
+  READ
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
